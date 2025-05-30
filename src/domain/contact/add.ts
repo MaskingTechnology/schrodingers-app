@@ -15,8 +15,6 @@ export default async function add(firstName: string, lastName: string, phone: st
             createChanel(personId, 'phone', phone),
             createChanel(personId, 'email', email)
         ]);
-
-        console.log(`Contact added with ID: ${personId}`);
     }
     catch (error)
     {
