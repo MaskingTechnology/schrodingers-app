@@ -1,5 +1,5 @@
 
-import './App.css'
+import './App.css';
 
 import ContactList from './components/ContactList';
 import ContactForm from './components/ContactForm';
