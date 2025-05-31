@@ -1,0 +1,7 @@
+{
+    "url": "http://127.0.0.1:2000",
+    "gateway":
+    {
+        "trustKey": "VERY_SECRET_KEY"
+    }
+}
