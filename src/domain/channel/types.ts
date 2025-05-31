@@ -1,8 +1,8 @@
 
 export type DataModel =
 {
-    id: string;
-    personId: string;
-    type: string;
-    value: string;
+    readonly id: string;
+    readonly personId: string;
+    readonly type: string;
+    readonly value: string;
 };

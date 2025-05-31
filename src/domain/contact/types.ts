@@ -4,6 +4,6 @@ import { DataModel as ChannelDataModel } from '../channel/types';
 
 export type AggregationModel =
 {
-    person: PersonDataModel;
-    channels: ChannelDataModel[];
+    readonly person: PersonDataModel;
+    readonly channels: ChannelDataModel[];
 };
