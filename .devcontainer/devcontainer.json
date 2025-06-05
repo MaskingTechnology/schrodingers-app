@@ -3,56 +3,12 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 
 	"hostRequirements": {
-		"cpus": 4,
+		"cpus": 2,
 		"memory": "8gb",
 		"storage": "20gb"
 	},
 
 	"forwardPorts": [3000],
-
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "terminal.integrated.defaultProfile.linux": "bash",
-                "terminal.integrated.profiles.linux": {
-                    "bash": {
-                        "path": "/bin/bash"
-                    }
-                }
-            },
-        "extensions": [],
-            "openTerminal": [
-                {
-                    "name": "standalone",
-                    "command": ""
-                },
-                {
-                    "name": "repository",
-                    "command": ""
-                },
-                {
-                    "name": "gateway",
-                    "command": ""
-                },
-                {
-                    "name": "proxy",
-                    "command": ""
-                },
-                {
-                    "name": "contact",
-                    "command": ""
-                },
-                {
-                    "name": "channel",
-                    "command": ""
-                },
-                {
-                    "name": "person",
-                    "command": ""
-                }
-            ]
-        }
-    },
 
 	"postCreateCommand": "npm install",
 
