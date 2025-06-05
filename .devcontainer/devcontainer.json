@@ -1,0 +1,16 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb",
+		"storage": "20gb"
+	},
+
+	"forwardPorts": [3000],
+
+	"postCreateCommand": "npm install",
+
+	"remoteUser": "root"
+}
