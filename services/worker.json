@@ -2,7 +2,7 @@
     "url": "http://127.0.0.1:4000",
     "worker":
     {
-        "gateway": "http://127.0.0.1:2000",
+        "gateway": "http://127.0.0.1:2001",
         "trustKey": "VERY_SECRET_KEY",
         "segments": ["default"]
     }
