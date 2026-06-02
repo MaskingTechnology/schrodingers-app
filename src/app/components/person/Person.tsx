@@ -1,5 +1,5 @@
 
-import type { DataModel } from '../../domain/person/types';
+import type { DataModel } from '../../../domain/person/types';
 
 type Props =
 {

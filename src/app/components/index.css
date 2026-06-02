@@ -1,4 +1,3 @@
-
 html, body
 {
     margin: 0;
@@ -20,4 +19,13 @@ body
 
     font-size: 20px;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#root
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5em;
+    padding-top: 3em;
 }

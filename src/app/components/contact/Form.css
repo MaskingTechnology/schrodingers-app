@@ -1,0 +1,34 @@
+.contact-form
+{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+
+    background-color: rgb(180, 95, 6);
+
+    border-radius: 0.8em;
+    padding: 1.3em;
+
+    input
+    {
+        color: rgb(21, 24, 20);
+        background-color: rgb(255, 255, 255);
+
+        border: 0;
+        border-radius: 0.4em;
+
+        font-size: 1em;
+
+        padding: 0.5em 0.8em;
+        margin-bottom: 0.3em;
+
+        &[type=submit]
+        {
+            color: rgb(255, 255, 255);
+            background-color: rgb(21, 24, 20);
+            font-weight: bold;
+            margin-top: 0.5em;
+            margin-bottom: 0;
+        }
+    }
+}

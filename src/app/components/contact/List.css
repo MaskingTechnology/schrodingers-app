@@ -1,0 +1,27 @@
+.contact-list
+{
+    width: 45vw;
+
+    .contact
+    {
+        background-color: rgb(67, 67, 67);
+        border-radius: 0.5em;
+        
+        padding: 1em;
+        margin-bottom: 0.5em;
+
+        .person
+        {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .channel-list
+        {
+            .channel
+            {
+                font-size: 0.9em;
+            }
+        }
+    }
+}

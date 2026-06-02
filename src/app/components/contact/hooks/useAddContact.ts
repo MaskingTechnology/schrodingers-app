@@ -1,7 +1,7 @@
 
 import { useCallback, useState } from 'react';
 
-import addContact from '../../domain/contact/add';
+import addContact from '../../../../domain/contact/add';
 
 export default function useAddContact(onAdded: () => void): [(data: FormData) => void, boolean]
 {

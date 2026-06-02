@@ -2,6 +2,7 @@
     "url": "http://127.0.0.1:1000",
     "repository":
     {
-        "assets": ["index.html", "main.js", "App.js", "jitar.svg", "assets/**/*"]
+        "assetRoot": "./app",
+        "assets": ["index.html", "assets/**/*"]
     }
 }

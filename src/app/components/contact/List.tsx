@@ -1,7 +1,9 @@
 
-import type { AggregationModel } from '../../domain/contact/types';
+import type { AggregationModel } from '../../../domain/contact/types';
 
 import Contact from './Contact';
+
+import './List.css';
 
 type Props =
 {
@@ -9,7 +11,7 @@ type Props =
     readonly isLoading: boolean;
 };
 
-export default function ContactList({ contacts, isLoading }: Props)
+export default function List({ contacts, isLoading }: Props)
 {
     if (isLoading)
     {

@@ -1,8 +1,8 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
-import type { AggregationModel } from '../../domain/contact/types';
-import getAllContacts from '../../domain/contact/getAll';
+import type { AggregationModel } from '../../../../domain/contact/types';
+import getAllContacts from '../../../../domain/contact/getAll';
 
 export default function useGetAllContacts(): [AggregationModel[], boolean, () => void]
 {

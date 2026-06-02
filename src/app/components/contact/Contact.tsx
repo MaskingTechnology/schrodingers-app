@@ -1,8 +1,8 @@
 
-import type { AggregationModel } from '../../domain/contact/types';
+import type { AggregationModel } from '../../../domain/contact/types';
 
-import Person from './Person';
-import ChannelList from './ChannelList';
+import ChannelList from '../channel/List';
+import Person from '../person/Person';
 
 type Props =
 {

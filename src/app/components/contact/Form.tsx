@@ -1,13 +1,15 @@
 
 import { FormEvent } from 'react';
 
+import './Form.css';
+
 type Props =
 {
     readonly onSubmit: (data: FormData) => void;
     readonly isSubmitting: boolean;
 };
 
-export default function ContactForm({ onSubmit, isSubmitting }: Props)
+export default function Form({ onSubmit, isSubmitting }: Props)
 {
     const submit = (event: FormEvent) =>
     {

@@ -3,6 +3,7 @@
     "standalone":
     {
         "segments": ["default"],
-        "assets": ["index.html", "main.js", "App.js", "jitar.svg", "assets/**/*"]
+        "assetRoot": "./app",
+        "assets": ["index.html", "assets/**/*"]
     }
 }
