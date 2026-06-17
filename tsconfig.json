@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
     "types": ["node"],
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "noEmit": false,
+    "declaration": true,
     "useDefineForClassFields": true,
     "allowJs": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler"
+    "forceConsistentCasingInFileNames": true
   }
 }

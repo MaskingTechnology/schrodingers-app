@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./",
+    "outDir": "../../build/common",
+    "paths": {
+      "^/*": ["./*"],
+    }
+  },
+  "include": ["./integrations"]
+}
