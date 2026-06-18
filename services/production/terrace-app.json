@@ -2,7 +2,8 @@
     "url": "http://127.0.0.1:1000",
     "repository":
     {
-        "assetRoot": "./app",
+        "serveIndexOnNotFound": true,
+        "assetRoot": "./terrace/app",
         "assets": ["index.html", "assets/**/*"]
     }
 }
