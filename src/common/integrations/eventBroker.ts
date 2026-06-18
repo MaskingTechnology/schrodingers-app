@@ -54,4 +54,4 @@ class EventBroker
     }
 }
 
-export default new EventBroker();
+export const eventBroker = new EventBroker();

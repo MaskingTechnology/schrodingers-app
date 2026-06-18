@@ -15,7 +15,7 @@
     "copy-apps": "cpx 'build/*/app/**/*' 'dist'",
     "copy-assets": "cpx 'build/*/assets/**/*' 'dist'",
     
-    "standalone": "jitar start --service=services/standalone.json"
+    "dev": "jitar start --service=services/development/worker.json"
   },
   "workspaces": [
     "src/common",

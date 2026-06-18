@@ -8,5 +8,5 @@
       "^/*": ["./*"],
     }
   },
-  "include": ["./integrations"]
+  "include": ["./integrations", "./utilities"]
 }

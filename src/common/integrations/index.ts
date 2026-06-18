@@ -1,3 +1,3 @@
 
-export { default as database } from './database';
-export { default as eventBroker } from './eventBroker';
+export { database } from './database';
+export { eventBroker } from './eventBroker';
