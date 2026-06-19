@@ -7,5 +7,5 @@ import { COLLECTION } from '../definitions';
 
 export default async function persist(data: DataModel, state: State): Promise<void>
 {
-    return database.updateOne(COLLECTION, { _id: data._id }, { state });
+    return database.updateOne<DataModel>(COLLECTION, { _id: data._id }, { state });
 }

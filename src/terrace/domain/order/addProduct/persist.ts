@@ -5,7 +5,7 @@ import type { DataModel } from '../types';
 
 import { COLLECTION } from '../definitions';
 
-export default async function persist(data: DataModel, productCodes: string[]): Promise<void>
+export default async function persist(data: DataModel, productCodes: string[], total: number): Promise<void>
 {
-    return database.updateOne(COLLECTION, { _id: data._id }, { productCodes });
+    return database.updateOne<DataModel>(COLLECTION, { _id: data._id }, { productCodes, total });
 }

@@ -1,4 +1,4 @@
 
-export { default } from './send';
-
 export { EVENT } from './publish';
+
+export { default } from './send';

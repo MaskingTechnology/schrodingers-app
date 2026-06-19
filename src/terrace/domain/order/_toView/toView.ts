@@ -7,10 +7,7 @@ export default async function toView(data: DataModel): Promise<ViewModel>
 {
     const products = await Promise.all(data.productCodes.map(code => getProductByCode(code)));
 
-    return {
-        createdAt: data.createdAt,
-        number: data.number,
-        state: data.state,
-        products
-    };
+    const { _id: $0, productCodes: $1, ...viewData } = data;
+
+    return { ...viewData, products };
 }

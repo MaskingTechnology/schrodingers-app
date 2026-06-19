@@ -2,9 +2,10 @@
 import type { ViewModel, State } from '../types';
 
 import _getByNumber from '../_getByNumber';
-import toView from '../toView';
+import _toView from '../_toView';
 
 import persist from './persist';
+import publish from './publish';
 
 export default async function send(number: string): Promise<ViewModel>
 {
@@ -14,7 +15,9 @@ export default async function send(number: string): Promise<ViewModel>
 
     await persist(data, state);
 
-    const view = await toView({ ...data, state });
+    const view = await _toView({ ...data, state });
+
+    await publish(view);
 
     return view;
 }

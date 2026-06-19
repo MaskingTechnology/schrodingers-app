@@ -1,3 +1,3 @@
 
-export const COLLECTION = 'orders';
-export const TOPIC = 'orders';
+export const COLLECTION = 'terrace.orders';
+export const TOPIC = 'terrace.orders';

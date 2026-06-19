@@ -1,18 +1,25 @@
 
 import type { ViewModel } from '../types';
 
-import _getByNumber from '../_getByNumber';
-import toView from '../toView';
+import getProductByCode from '../../product/getByCode';
+
+import _getOrderByNumber from '../_getByNumber';
+import _toView from '../_toView';
 
 import persist from './persist';
 
-export default async function addProduct(number: string, productCode: string): Promise<ViewModel>
+export default async function addProduct(orderNumber: string, productCode: string): Promise<ViewModel>
 {
-    const data = await _getByNumber(number);
+    const [orderData, productView] = await Promise.all(
+    [
+        _getOrderByNumber(orderNumber),
+        getProductByCode(productCode)
+    ]);
 
-    const productCodes = [...data.productCodes, productCode];
+    const productCodes = [...orderData.productCodes, productCode];
+    const total = orderData.total + productView.price;
 
-    await persist(data, productCodes);
+    await persist(orderData, productCodes, total);
 
-    return toView({ ...data, productCodes });
+    return _toView({ ...orderData, productCodes, total });
 }

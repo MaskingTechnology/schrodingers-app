@@ -9,5 +9,5 @@ export const EVENT = '';
 
 export default async function(view: ViewModel): Promise<void>
 {
-    eventBroker.publish({ topic: TOPIC, event: EVENT, data: view });
+    eventBroker.publish<ViewModel>({ topic: TOPIC, event: EVENT, data: view });
 }

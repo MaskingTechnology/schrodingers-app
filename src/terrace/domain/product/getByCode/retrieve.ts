@@ -6,5 +6,5 @@ import type { DataModel } from '../types';
 
 export default async function retrieve(code: string): Promise<DataModel | undefined>
 {
-    return database.findOne(COLLECTION, { code }) as Promise<DataModel | undefined>;
+    return database.findOne<DataModel>(COLLECTION, { code });
 }

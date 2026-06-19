@@ -1,2 +1,2 @@
 
-export const COLLECTION = 'products';
+export const COLLECTION = 'terrace.products';

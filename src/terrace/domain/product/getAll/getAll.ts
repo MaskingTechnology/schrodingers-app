@@ -1,7 +1,7 @@
 
 import type { ViewModel } from '../types';
 
-import toView from '../toView';
+import _toView from '../_toView';
 
 import retrieveAll from './retrieveAll';
 
@@ -9,5 +9,5 @@ export default async function getByCode(): Promise<ViewModel[]>
 {
     const list = await retrieveAll();
 
-    return list.map(data => toView(data));
+    return list.map(data => _toView(data));
 }

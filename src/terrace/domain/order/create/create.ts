@@ -1,16 +1,16 @@
 
 import type { ViewModel } from '../types';
 
-import toView from '../toView';
+import _toView from '../_toView';
 
 import createData from './createData';
 import persist from './persist';
 
-export default async function create(): Promise<ViewModel>
+export default async function create(tableNumber: string): Promise<ViewModel>
 {
-    const data = createData();
+    const data = createData(tableNumber);
 
     await persist(data);
 
-    return toView(data);
+    return _toView(data);
 }

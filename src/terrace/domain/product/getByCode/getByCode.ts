@@ -1,7 +1,7 @@
 
 import type { ViewModel } from '../types';
 
-import toView from '../toView';
+import _toView from '../_toView';
 
 import retrieve from './retrieve';
 import UnknownCode from './UnknownCode';
@@ -15,5 +15,5 @@ export default async function getByCode(code: string): Promise<ViewModel>
         throw new UnknownCode(code);
     }
 
-    return toView(data);
+    return _toView(data);
 }
