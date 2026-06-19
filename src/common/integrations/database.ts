@@ -1,44 +1,44 @@
 
-type Data = Record<string, unknown>;
-type Document = Data & { _id: string; };
-type Collection = Map<string, Document>;
-type Query = Record<string, unknown>;
+type Document = { _id: string; } & Record<string, unknown>;
+type Collection<T extends Document> = Map<string, T>;
+type Query<T> = Partial<T>;
+type Data<T> = Partial<T>;
 
 class Database
 {
-    readonly #collections = new Map<string, Collection>();
+    readonly #collections = new Map<string, Collection<Document>>();
 
     async insert<T extends Document>(collectionName: string, document: T): Promise<void>
     {
         this.#getCollection(collectionName).set(document._id, document);
     }
 
-    async find(collectionName: string, query: Query): Promise<Document[]>
+    async find<T extends Document>(collectionName: string, query: Query<T>): Promise<T[]>
     {
-        const documents = this.#getCollection(collectionName).values();
+        const documents = this.#getCollection<T>(collectionName).values();
         
         const result = documents.filter(document => this.#isMatch(document, query));
 
         return Array.from(result);
     }
 
-    async findOne(collectionName: string, query: Query): Promise<Document | undefined>
+    async findOne<T extends Document>(collectionName: string, query: Query<T>): Promise<T | undefined>
     {
-        const documents = this.#getCollection(collectionName).values();
+        const documents = this.#getCollection<T>(collectionName).values();
 
         return documents.find(document => this.#isMatch(document, query));
     }
 
-    async update(collectionName: string, query: Query, mutations: Data): Promise<void>
+    async update<T extends Document>(collectionName: string, query: Query<T>, mutations: Data<T>): Promise<void>
     {
-        const documents = await this.find(collectionName, query);
+        const documents = await this.find<T>(collectionName, query);
 
         documents.forEach(document => this.#mutate(document, mutations));
     }
 
-    async updateOne(collectionName: string, query: Query, mutations: Data): Promise<void>
+    async updateOne<T extends Document>(collectionName: string, query: Query<T>, mutations: Data<T>): Promise<void>
     {
-        const document = await this.findOne(collectionName, query);
+        const document = await this.findOne<T>(collectionName, query);
 
         if (document === undefined)
         {
@@ -48,9 +48,9 @@ class Database
         this.#mutate(document, mutations);
     }
 
-    async delete(collectionName: string, query: Query): Promise<void>
+    async delete<T extends Document>(collectionName: string, query: Query<T>): Promise<void>
     {
-        const document = await this.findOne(collectionName, query);
+        const document = await this.findOne<T>(collectionName, query);
 
         if (document === undefined)
         {
@@ -60,15 +60,15 @@ class Database
         this.#getCollection(collectionName).delete(document._id);
     }
 
-    async deleteMany(collectionName: string, query: Query): Promise<void>
+    async deleteMany<T extends Document>(collectionName: string, query: Query<T>): Promise<void>
     {
-        const collection = this.#getCollection(collectionName);
-        const documents = await this.find(collectionName, query);
+        const collection = this.#getCollection<T>(collectionName);
+        const documents = await this.find<T>(collectionName, query);
 
         documents.forEach(document => collection.delete(document._id));
     }
 
-    #getCollection(name: string): Collection
+    #getCollection<T extends Document>(name: string): Collection<T>
     {
         let collection = this.#collections.get(name);
 
@@ -79,10 +79,10 @@ class Database
             this.#collections.set(name, collection);
         }
 
-        return collection;
+        return collection as Collection<T>;
     }
 
-    #isMatch(document: Document, query: Query): boolean
+    #isMatch<T extends Document>(document: T, query: Query<T>): boolean
     {
         const queryEntries = Object.entries(query);
 
@@ -97,7 +97,7 @@ class Database
         return true;
     }
 
-    #mutate(document: Document, mutations: Data): void
+    #mutate<T extends Document>(document: Document, mutations: Data<T>): void
     {
         const dataEntries = Object.entries(mutations);
 

@@ -1,29 +1,29 @@
 
 type Data = Record<string, unknown>;
-type Handler = (data: Data) => void;
+type Handler<T extends Data> = (data: T) => void;
 
-type Event = Set<Handler>;
-type Topic = Map<string, Event>;
+type Event<T extends Data> = Set<Handler<T>>;
+type Topic = Map<string, Event<Data>>;
 
 type Address = { topic: string, event: string};
-type Publication = Address & { data: Data };
-type Subscription = Address & { handler: Handler };
+type Publication<T extends Data> = Address & { data: T };
+type Subscription<T extends Data> = Address & { handler: Handler<T> };
 
 class EventBroker
 {
     readonly #topics = new Map<string, Topic>;
 
-    async publish(publication: Publication): Promise<void>
+    async publish<T extends Data>(publication: Publication<T>): Promise<void>
     {
-        this.#getEvent(publication).forEach(handler => handler(publication.data));
+        this.#getEvent<T>(publication).forEach(handler => handler(publication.data));
     }
 
-    async subscribe(subscription: Subscription): Promise<void>
+    async subscribe<T extends Data>(subscription: Subscription<T>): Promise<void>
     {
-        this.#getEvent(subscription).add(subscription.handler);
+        this.#getEvent<T>(subscription).add(subscription.handler);
     }
 
-    #getEvent(address: Address): Event
+    #getEvent<T extends Data>(address: Address): Event<T>
     {
         const topic = this.#getTopic(address.topic);
 
