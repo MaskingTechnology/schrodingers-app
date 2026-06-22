@@ -26,5 +26,8 @@ export default defineConfig({
   plugins: [
     react(),
     jitar(jitarConfig)
-  ]
+  ],
+  server: {
+      port: 5174
+  }
 });

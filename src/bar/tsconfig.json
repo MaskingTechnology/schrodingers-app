@@ -6,13 +6,11 @@
     "outDir": "../../build/bar",
     "paths": {
       "^/*": ["./*"],
-      "@schrodinger/common/*": ["../common/*"],
-      "@schrodinger/terrace/*": ["../terrace/*"]
+      "@schrodinger/common/*": ["../common/*"]
     }
   },
   "references": [
-    { "path" : "../common" },
-    { "path" : "../terrace" }
+    { "path" : "../common" }
   ],
   "include": ["./domain"]
 }

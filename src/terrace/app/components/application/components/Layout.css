@@ -1,0 +1,26 @@
+.layout
+{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    & > header
+    {
+        grid-column: 1 / span 2;
+    }
+
+    & > main
+    {
+        min-height: 200px;
+    }
+
+    & > aside
+    {
+        border-left: 1px solid #aaaaaa;
+        min-height: 300px;
+        padding: 20px;
+    }
+}

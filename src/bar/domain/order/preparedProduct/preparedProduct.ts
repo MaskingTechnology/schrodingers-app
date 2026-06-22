@@ -1,6 +1,7 @@
 
 import _getByNumber from '../_getByNumber';
 
+import markPrepared from './markPrepared';
 import persist from './persist';
 import NoProduct from './NoProduct';
 
@@ -15,7 +16,7 @@ export default async function preparedProduct(orderNumber: string, productIndex:
         throw new NoProduct(orderNumber, productIndex);
     }
 
-    data.products[productIndex] = { ...product, prepared: true };
+    const products = markPrepared(data.products, productIndex);
 
-    return persist(data, data.products);
+    return persist(data, products);
 }

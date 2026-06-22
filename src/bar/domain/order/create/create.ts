@@ -1,12 +1,12 @@
 
-import { ViewModel as TerraceViewModel } from '@schrodinger/terrace/domain/order';
+import type { SentEvent } from '@schrodinger/common/domain/order';
 
 import createData from './createData';
 import persist from './persist';
 
-export default async function create(terraceOrder: TerraceViewModel): Promise<void>
+export default async function create(eventData: SentEvent): Promise<void>
 {
-    const data = createData(terraceOrder);
+    const data = createData(eventData);
 
     return persist(data);
 }

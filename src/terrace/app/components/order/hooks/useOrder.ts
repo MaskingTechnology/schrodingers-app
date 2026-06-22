@@ -26,7 +26,7 @@ export default function useOrder(tableNumber: string)
         setOrder(updatedOrder);
     };
 
-    const removeProduct = async (index: number) =>
+    const removeProduct = async (productIndex: number) =>
     {
         // Implement me
     };
@@ -37,7 +37,7 @@ export default function useOrder(tableNumber: string)
 
         const updatedOrder = await sendOrder(order.number);
 
-        setOrder(updatedOrder);
+        create();
     };
 
     useEffect(() => { create(); }, []);

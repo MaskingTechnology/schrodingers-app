@@ -1,16 +1,20 @@
 
-import ProductGrid from './components/ProductGrid';
+import { ViewModel as ProductView } from '^/domain/product';
 
-import useProducts from './hooks/useProducts';
+import ProductGrid from './components/ProductGrid';
 
 type Props =
 {
-    readonly onOrder: (code: string) => void;
+    readonly products: ProductView[];
+    readonly onOrder: (productCode: string) => void;
 };
 
-export default function({ onOrder }: Props)
+export default function({ products, onOrder }: Props)
 {
-    const { products } = useProducts();
+    if (products.length === 0)
+    {
+        return <span>(no products to order)</span>;
+    }
 
     return <ProductGrid products={products} onOrder={onOrder}></ProductGrid>;
 }

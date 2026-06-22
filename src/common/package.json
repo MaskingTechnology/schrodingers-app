@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "npm run clean && npm run build-domain",
-    "build-domain": "tsc",
+    "build": "npm run clean && tsc && tsc-alias",
     "clean": "rimraf ../../build/common",
     "lint": "eslint"
   }

@@ -1,11 +1,15 @@
 
+import { DesignSystem } from '@schrodinger/common/designsystem';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './index.css';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    Nothing to see here.
+    <DesignSystem>
+      <App></App>
+    </DesignSystem>
   </React.StrictMode>
 );

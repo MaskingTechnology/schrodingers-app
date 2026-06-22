@@ -1,0 +1,30 @@
+
+.designsystem
+{
+    .button
+    {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+
+        &.primary
+        {
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        &.secondary
+        {
+            background-color: #eeeeee;
+        }
+
+        &.disabled
+        {
+            background-color: #666666;
+            cursor: default;
+        }
+    }
+}

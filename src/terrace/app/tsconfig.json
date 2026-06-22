@@ -6,8 +6,12 @@
     "noEmit": true,
     "paths": {
       "^/*": ["../*"],
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@schrodinger/common/*": ["../../common/*"]
     }
   },
+  "references": [
+    { "path" : "../../common" }
+  ],
   "include": ["./"]
 }

@@ -1,10 +1,13 @@
 
-import { database } from '@schrodinger/common/integrations';
+import { ViewModel } from '../types';
 
-import { COLLECTION } from '../definitions';
-import type { DataModel } from '../types';
+import _toView from '../_toView';
 
-export default async function retrieve(): Promise<DataModel[]>
+import retrieve from './retrieve';
+
+export default async function getOpen(): Promise<ViewModel[]>
 {
-    return database.find<DataModel>(COLLECTION, { state: 'OPEN' });
+    const list = await retrieve();
+
+    return list.map(data => _toView(data));
 }

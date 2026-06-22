@@ -1,4 +1,8 @@
 
+import { Row, Button } from '@schrodinger/common/designsystem';
+
+import { toCurrency } from '@schrodinger/common/utilities';
+
 import type { ViewModel as ProductView } from '^/domain/product';
 
 type Props =
@@ -9,8 +13,8 @@ type Props =
 
 export default function({ product, onRemove }: Props)
 {
-    return <div className='row'>
-        <span>{product.name}</span>
-        <button onClick={onRemove}>Remove</button>
-    </div>;
+    return <Row>
+        <span>{product.name} ({toCurrency(product.price)})</span>
+        <Button type='secondary' onClick={onRemove}>✘</Button>
+    </Row>;
 }

@@ -1,17 +1,16 @@
 
+import type { SentEvent } from '@schrodinger/common/domain/order';
 import { generateId } from '@schrodinger/common/utilities';
-
-import { ViewModel as TerraceViewModel } from '@schrodinger/terrace/domain/order';
 
 import { DataModel } from '../types';
 
-export default function createData(terraceOrder: TerraceViewModel): DataModel
+export default function createData(eventData: SentEvent): DataModel
 {
     const _id = generateId();
-    const { number, tableNumber } = terraceOrder;
+    const { number, tableNumber } = eventData;
     const openedAt = new Date();
     const state = 'OPEN';
-    const products = terraceOrder.products.map(product =>
+    const products = eventData.products.map(product =>
     {
         const { code, name } = product;
         const prepared = false;

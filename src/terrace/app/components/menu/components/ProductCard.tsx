@@ -1,15 +1,19 @@
 
+import { Card, Row, Button } from '@schrodinger/common/designsystem';
+
+import { toCurrency } from '@schrodinger/common/utilities';
+
 import type { ViewModel as ProductView } from '^/domain/product';
 
 type Props =
 {
     readonly product: ProductView;
-    readonly onOrder: (code: string) => void;
+    readonly onOrder: (productCode: string) => void;
 };
 
 export default function({ product, onOrder }: Props)
 {
-    return <div className='card'>
+    return <Card>
         <header>
             {product.name}
         </header>
@@ -17,8 +21,10 @@ export default function({ product, onOrder }: Props)
             <img src={product.imageUrl} />
         </main>
         <footer>
-            <span>{product.price}</span>
-            <button onClick={() => onOrder(product.code)}>Order</button>
+            <Row>
+                <strong>{toCurrency(product.price)}</strong>
+                <Button type='primary' onClick={() => onOrder(product.code)}>Add to order</Button>
+            </Row>
         </footer>
-    </div>;
+    </Card>;
 }
