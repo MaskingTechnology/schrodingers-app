@@ -1,7 +1,7 @@
 
 import { Grid } from '@schrodinger/common/designsystem';
 
-import type { ViewModel as ProductView } from '^/domain/product';
+import type { ProductView } from '^/domain/product';
 
 import ProductCard from './ProductCard';
 

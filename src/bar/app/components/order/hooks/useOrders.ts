@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-import { ViewModel as OrderView } from '^/domain/order';
+import { OrderView } from '^/domain/order';
 import getOpenOrders from '^/domain/order/getOpen';
 import preparedProduct from '^/domain/order/preparedProduct';
 import closeOrder from '^/domain/order/close';
@@ -17,9 +17,9 @@ export default function useOrders()
         setOrders(openOrders);
     };
 
-    const productPrepared = async (orderNumber: string, productIndex: number) =>
+    const productPrepared = async (orderNumber: string, entryId: string) =>
     {
-        await preparedProduct(orderNumber, productIndex);
+        await preparedProduct(orderNumber, entryId);
 
         refresh();
     };

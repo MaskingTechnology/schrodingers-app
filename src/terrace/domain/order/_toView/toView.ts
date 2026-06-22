@@ -1,13 +1,19 @@
 
-import type { DataModel, ViewModel } from '../types';
+import type { OrderData, OrderView } from '../types';
 
 import getProductByCode from '../../product/getByCode';
 
-export default async function toView(data: DataModel): Promise<ViewModel>
+export default async function toView(data: OrderData): Promise<OrderView>
 {
-    const products = await Promise.all(data.productCodes.map(code => getProductByCode(code)));
+    const { _id: $0, productRefs: $1, ...viewData } = data;
 
-    const { _id: $0, productCodes: $1, ...viewData } = data;
+    const productViews = await Promise.all(
+        data.productRefs.map(ref => getProductByCode(ref.productCode))
+    );
+
+    const products = data.productRefs.map((ref, index) => {
+        return { entryId: ref.entryId, ...productViews[index]};
+    });
 
     return { ...viewData, products };
 }

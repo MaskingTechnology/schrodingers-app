@@ -1,12 +1,12 @@
 
-import type { ViewModel } from '../types';
+import type { ProductView } from '../types';
 
 import _toView from '../_toView';
 
 import retrieve from './retrieve';
 import UnknownCode from './UnknownCode';
 
-export default async function getByCode(code: string): Promise<ViewModel>
+export default async function getByCode(code: string): Promise<ProductView>
 {
     const data = await retrieve(code);
 

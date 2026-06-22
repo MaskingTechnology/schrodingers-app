@@ -2,9 +2,9 @@
 import { database } from '@schrodinger/common/integrations';
 
 import { COLLECTION } from './definitions';
-import type { DataModel } from './types';
+import type { ProductData } from './types';
 
-const products: DataModel[] =
+const products: ProductData[] =
 [
     { _id: '000001', code: 'BB-001', name: 'Bottle of beer', price: 4.25, imageUrl: '' },
     { _id: '000002', code: 'GB-001', name: 'Glass of beer', price: 3.50, imageUrl: '' },

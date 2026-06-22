@@ -1,11 +1,11 @@
 
 import { Row, Button } from '@schrodinger/common/designsystem';
 
-import type { Product as ProductView } from '^/domain/order';
+import type { Product } from '^/domain/order';
 
 type Props =
 {
-    readonly product: ProductView;
+    readonly product: Product;
     readonly onPrepared: () => void;
 };
 

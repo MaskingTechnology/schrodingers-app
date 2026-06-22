@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-import { ViewModel as ProductView } from '^/domain/product';
+import { ProductView } from '^/domain/product';
 import getAllProducts from '^/domain/product/getAll';
 
 export default function useProducts()

@@ -2,9 +2,9 @@
 import { database } from '@schrodinger/common/integrations';
 
 import { COLLECTION } from '../definitions';
-import type { DataModel } from '../types';
+import type { ProductData } from '../types';
 
-export default async function retrieve(code: string): Promise<DataModel | undefined>
+export default async function retrieve(code: string): Promise<ProductData | undefined>
 {
-    return database.findOne<DataModel>(COLLECTION, { code });
+    return database.findOne<ProductData>(COLLECTION, { code });
 }

@@ -1,14 +1,14 @@
 
 import { Grid } from '@schrodinger/common/designsystem';
 
-import type { ViewModel as OrderView } from '^/domain/order';
+import type { OrderView } from '^/domain/order';
 
-import Order from './components/OrderCard';
+import OrderCard from './components/OrderCard';
 
 type Props =
 {
     readonly orders: OrderView[];
-    readonly onProductPrepared: (orderNumber: string, productIndex: number) => void;
+    readonly onProductPrepared: (orderNumber: string, productId: string) => void;
     readonly onClose: (orderNumber: string) => void;
 };
 
@@ -22,12 +22,12 @@ export default function({ orders, onProductPrepared, onClose }: Props)
     return <Grid>
         {
             orders.map(order =>
-                <Order
+                <OrderCard
                     order={order}
                     onProductPrepared={onProductPrepared}
                     onClose={onClose}
                     key={order.number}
-                ></Order>
+                ></OrderCard>
             )
         }
     </Grid>;

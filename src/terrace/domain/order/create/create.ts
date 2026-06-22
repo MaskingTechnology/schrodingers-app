@@ -1,12 +1,12 @@
 
-import type { ViewModel } from '../types';
+import type { OrderView } from '../types';
 
 import _toView from '../_toView';
 
 import createData from './createData';
 import persist from './persist';
 
-export default async function create(tableNumber: string): Promise<ViewModel>
+export default async function create(tableNumber: string): Promise<OrderView>
 {
     const data = createData(tableNumber);
 

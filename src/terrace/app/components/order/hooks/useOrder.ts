@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-import type { ViewModel as OrderView } from '^/domain/order';
+import type { OrderView } from '^/domain/order';
 import createOrder from '^/domain/order/create';
 import addProductToOrder from '^/domain/order/addProduct';
 import sendOrder from '^/domain/order/send';
@@ -26,7 +26,7 @@ export default function useOrder(tableNumber: string)
         setOrder(updatedOrder);
     };
 
-    const removeProduct = async (productIndex: number) =>
+    const removeProduct = async (entryId: string) =>
     {
         // Implement me
     };

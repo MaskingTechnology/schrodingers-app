@@ -1,14 +1,14 @@
 
 import { List } from '@schrodinger/common/designsystem';
 
-import type { ViewModel as ProductView } from '^/domain/product';
+import type { ProductView } from '^/domain/order';
 
 import ProductRow from './ProductRow';
 
 type Props =
 {
     readonly products: ProductView[];
-    readonly onRemove: (productIndex: number) => void;
+    readonly onRemove: (entryId: string) => void;
 };
 
 export default function({ products, onRemove }: Props)
@@ -20,11 +20,11 @@ export default function({ products, onRemove }: Props)
 
     return <List>
         {
-            products.map((product, index) =>
+            products.map(product =>
                 <ProductRow
                     product={product}
-                    onRemove={() => onRemove(index)}
-                    key={product.code + '@' + index}
+                    onRemove={() => onRemove(product.entryId)}
+                    key={product.entryId}
                 ></ProductRow>
             )
         }

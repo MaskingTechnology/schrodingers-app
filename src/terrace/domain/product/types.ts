@@ -1,5 +1,5 @@
 
-export type DataModel =
+export type ProductData =
 {
     readonly _id: string;
     readonly code: string;
@@ -8,4 +8,4 @@ export type DataModel =
     readonly imageUrl: string;
 };
 
-export type ViewModel = Omit<DataModel, '_id'>;
+export type ProductView = Omit<ProductData, '_id'>;

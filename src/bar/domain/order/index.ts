@@ -1,2 +1,2 @@
 
-export type { ViewModel, Product } from './types';
+export type { OrderView, Product } from './types';

@@ -1,13 +1,13 @@
 
-import { Product } from '../types';
+import { OrderData, Product } from '../types';
 
-export default function mapPrepared(products: Product[], preparedIndex: number): Product[]
+export default function markPrepared(data: OrderData, entryId: string): Product[]
 {
-    return products.map((product, index) =>
+    return data.products.map(product =>
     {
         const copy = {...product};
 
-        if (index === preparedIndex)
+        if (product.entryId === entryId)
         {
             copy.prepared = true;
         }

@@ -3,7 +3,7 @@ import { Row, Button } from '@schrodinger/common/designsystem';
 
 import { toCurrency } from '@schrodinger/common/utilities';
 
-import type { ViewModel as ProductView } from '^/domain/product';
+import type { ProductView } from '^/domain/order';
 
 type Props =
 {

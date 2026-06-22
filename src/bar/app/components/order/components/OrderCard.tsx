@@ -1,7 +1,7 @@
 
 import { Card } from '@schrodinger/common/designsystem';
 
-import type { ViewModel as OrderView } from '^/domain/order';
+import type { OrderView } from '^/domain/order';
 
 import ProductList from './ProductList';
 import CloseButton from './CloseButton';
@@ -9,7 +9,7 @@ import CloseButton from './CloseButton';
 type Props =
 {
     readonly order: OrderView;
-    readonly onProductPrepared: (orderNumber: string, productIndex: number) => void;
+    readonly onProductPrepared: (orderNumber: string, entryId: string) => void;
     readonly onClose: (orderNumber: string) => void;
 };
 
@@ -20,7 +20,7 @@ export default function({ order, onProductPrepared, onClose }: Props)
         <main>
             <ProductList
                 products={order.products}
-                onPrepared={(productIndex: number) => onProductPrepared(order.number, productIndex)}>
+                onPrepared={(entryId: string) => onProductPrepared(order.number, entryId)}>
             </ProductList>
         </main>
         <footer>

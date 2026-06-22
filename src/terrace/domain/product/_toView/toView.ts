@@ -1,7 +1,7 @@
 
-import type { DataModel, ViewModel } from '../types';
+import type { ProductData, ProductView } from '../types';
 
-export default function toView(data: DataModel): ViewModel
+export default function toView(data: ProductData): ProductView
 {
     const { _id: $, ...view } = data;
 

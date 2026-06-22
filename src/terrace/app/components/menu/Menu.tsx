@@ -1,5 +1,5 @@
 
-import { ViewModel as ProductView } from '^/domain/product';
+import { ProductView } from '^/domain/product';
 
 import ProductGrid from './components/ProductGrid';
 

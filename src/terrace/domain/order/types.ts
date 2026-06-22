@@ -1,20 +1,31 @@
 
-import { ViewModel as ProductViewModel } from '../product/types';
+import { ProductView as ProductViewModel } from '../product/types';
 
 export type State = 'CREATED' | 'SENT';
 
-export type DataModel =
+export type ProductRef =
+{
+    entryId: string;
+    productCode: string;
+};
+
+export type OrderData =
 {
     readonly _id: string;
     readonly createdAt: Date;
     readonly number: string;
     readonly tableNumber: string;
     readonly state: State;
-    readonly productCodes: string[];
+    readonly productRefs: ProductRef[];
     readonly total: number;
 };
 
-export type ViewModel = Omit<DataModel, '_id' | 'productCodes'> &
+export type ProductView = ProductViewModel &
 {
-    readonly products: ProductViewModel[];
+    entryId: string;
+}
+
+export type OrderView = Omit<OrderData, '_id' | 'productRefs'> &
+{
+    readonly products: ProductView[];
 };

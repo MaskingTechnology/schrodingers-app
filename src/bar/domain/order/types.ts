@@ -3,12 +3,13 @@ export type State = 'OPEN' | 'CLOSED';
 
 export type Product =
 {
+    readonly entryId: string;
     readonly code: string;
     readonly name: string;
     readonly prepared: boolean;
 };
 
-export type DataModel =
+export type OrderData =
 {
     readonly _id: string;
     readonly number: string;
@@ -18,4 +19,4 @@ export type DataModel =
     readonly products: Product[];
 };
 
-export type ViewModel = Omit<DataModel, '_id'>;
+export type OrderView = Omit<OrderData, '_id'>;

@@ -5,8 +5,8 @@ import { Order, useOrder } from './order';
 
 export default function()
 {
-    const { products, refresh } = useProducts();
-    const { order, create, addProduct, removeProduct, send } = useOrder('42');
+    const { products } = useProducts();
+    const { order, addProduct, removeProduct, send } = useOrder('42');
 
     return <Layout
         header={<Header></Header>}
