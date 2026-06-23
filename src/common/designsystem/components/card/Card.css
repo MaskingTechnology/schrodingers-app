@@ -8,11 +8,5 @@
         display: flex;
         flex-direction: column;
         padding: 20px;
-
-        header
-        {
-            font-size: 1.4em;
-            font-weight: bold;
-        }
     }
 }

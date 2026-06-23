@@ -1,5 +1,5 @@
 
-import { Row } from '@schrodinger/common/designsystem';
+import { Row, Text } from '@schrodinger/common/designsystem';
 
 import { toCurrency } from '@schrodinger/common/utilities';
 
@@ -11,7 +11,7 @@ type Props =
 export default function({ amount }: Props)
 {
     return <Row>
-        <strong>Total</strong>
-        <strong>{toCurrency(amount)}</strong>
+        <Text weight='bold'>Total</Text>
+        <Text weight='bold'>{toCurrency(amount)}</Text>
     </Row>;
 }

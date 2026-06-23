@@ -1,5 +1,5 @@
 
-import { Row, Button } from '@schrodinger/common/designsystem';
+import { Row, Text, Button } from '@schrodinger/common/designsystem';
 
 import type { Product } from '^/domain/order';
 
@@ -12,7 +12,7 @@ type Props =
 export default function({ product, onPrepared }: Props)
 {
     return <Row>
-        <span>{product.name}</span>
+        <Text>{product.name}</Text>
         <Button type='secondary' onClick={onPrepared}>✔</Button>
     </Row>;
 }

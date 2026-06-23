@@ -1,5 +1,5 @@
 
-import { List } from '@schrodinger/common/designsystem';
+import { List, Text } from '@schrodinger/common/designsystem';
 
 import type { Product } from '^/domain/order';
 
@@ -15,7 +15,7 @@ export default function({ products, onPrepared }: Props)
 {
     if (products.length === 0)
     {
-        return <span>Order is ready to be served.</span>
+        return <Text type='secondary'>Order is ready to be served.</Text>
     }
 
     return <List>

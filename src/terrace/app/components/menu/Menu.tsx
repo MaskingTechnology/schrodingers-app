@@ -1,4 +1,6 @@
 
+import { Text } from '@schrodinger/common/designsystem';
+
 import { ProductView } from '^/domain/product';
 
 import ProductGrid from './components/ProductGrid';
@@ -13,7 +15,7 @@ export default function({ products, onOrder }: Props)
 {
     if (products.length === 0)
     {
-        return <span>(no products to order)</span>;
+        return <Text type='secondary'>(no products to order)</Text>;
     }
 
     return <ProductGrid products={products} onOrder={onOrder}></ProductGrid>;

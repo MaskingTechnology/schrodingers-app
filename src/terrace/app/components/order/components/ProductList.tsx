@@ -1,5 +1,5 @@
 
-import { List } from '@schrodinger/common/designsystem';
+import { List, Text } from '@schrodinger/common/designsystem';
 
 import type { ProductView } from '^/domain/order';
 
@@ -15,7 +15,7 @@ export default function({ products, onRemove }: Props)
 {
     if (products.length === 0)
     {
-        return <span>(no products in order)</span>;
+        return <Text type='secondary'>(no products in order)</Text>;
     }
 
     return <List>
