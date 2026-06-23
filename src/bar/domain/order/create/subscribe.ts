@@ -1,11 +1,11 @@
 
-import { subscribe as subscribeToEvent } from '@schrodinger/common/domain/order/sent';
+import { subscribe } from '@schrodinger/common/domain/order/sent';
 
 import create from './create';
 
-export default async function subscribe(): Promise<void>
+export default async function execute(): Promise<void>
 {
-    return subscribeToEvent(create);
+    return subscribe(create);
 }
 
-subscribe();
+execute();

@@ -1,11 +1,12 @@
 
+import { publish } from '@schrodinger/common/domain/order/sent';
+
 import type { OrderView, State } from '../types';
 
 import _getByNumber from '../_getByNumber';
 import _toView from '../_toView';
 
 import persist from './persist';
-import publish from './publish';
 
 export default async function send(number: string): Promise<OrderView>
 {
