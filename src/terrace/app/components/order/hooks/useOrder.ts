@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import type { OrderView } from '^/domain/order';
+import getOrderByTable from '^/domain/order/getByTable';
 import createOrder from '^/domain/order/create';
 import addProductToOrder from '^/domain/order/addProduct';
 import sendOrder from '^/domain/order/send';
@@ -9,6 +10,18 @@ import sendOrder from '^/domain/order/send';
 export default function useOrder(tableNumber: string)
 {
     const [order, setOrder] = useState<OrderView | undefined>(undefined);
+
+    const initialize = async() =>
+    {
+        const currentOrder = await getOrderByTable(tableNumber);
+
+        if (currentOrder === undefined)
+        {
+            return create();
+        }
+
+        setOrder(currentOrder);
+    };
 
     const create = async () =>
     {
@@ -35,12 +48,12 @@ export default function useOrder(tableNumber: string)
     {
         if (order === undefined) return;
 
-        const updatedOrder = await sendOrder(order.number);
+        await sendOrder(order.number);
 
         create();
     };
 
-    useEffect(() => { create(); }, []);
+    useEffect(() => { initialize(); }, []);
 
     return { order, create, addProduct, removeProduct, send };
 }

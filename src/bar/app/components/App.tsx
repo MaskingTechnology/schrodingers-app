@@ -4,10 +4,10 @@ import { OrderList, useOrders } from './order';
 
 export default function()
 {
-    const { orders, productPrepared, close } = useOrders();
+    const { orders, refresh, productPrepared, close } = useOrders();
 
     return <Layout
-        header={<Header></Header>}
+        header={<Header onRefresh={refresh}></Header>}
         main={<OrderList orders={orders} onProductPrepared={productPrepared} onClose={close}></OrderList>}>
     </Layout>
 }

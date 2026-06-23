@@ -19,19 +19,24 @@ export default function useOrders()
 
     const productPrepared = async (orderNumber: string, entryId: string) =>
     {
-        await preparedProduct(orderNumber, entryId);
+        const updatedOrder = await preparedProduct(orderNumber, entryId);
 
-        refresh();
+        const orderIndex = orders.findIndex(order => order.number === orderNumber);
+        const updatedOrders = orders.with(orderIndex, updatedOrder);
+
+        setOrders(updatedOrders);
     };
 
     const close = async (orderNumber: string) =>
     {
         await closeOrder(orderNumber);
 
-        refresh();
+        const updatedOrders = orders.filter(order => order.number !== orderNumber);
+
+        setOrders(updatedOrders);
     };
 
     useEffect(() => { refresh(); }, []);
 
-    return { orders, productPrepared, close };
+    return { orders, refresh, productPrepared, close };
 }

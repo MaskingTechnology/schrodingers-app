@@ -15,11 +15,13 @@ type Props =
 
 export default function({ order, onProductPrepared, onClose }: Props)
 {
+    const products = order.products.filter(product => product.prepared === false);
+
     return <Card>
-        <header>Order #{order.number}</header>
+        <header>Order #{order.number} | Table {order.tableNumber}</header>
         <main>
             <ProductList
-                products={order.products}
+                products={products}
                 onPrepared={(entryId: string) => onProductPrepared(order.number, entryId)}>
             </ProductList>
         </main>

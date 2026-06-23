@@ -1,5 +1,9 @@
 
+import { Row, Title } from '@schrodinger/common/designsystem';
+
 export default function()
 {
-    return <div>Header</div>;
+    return <Row>
+        <Title>Schrödinger's Terrace</Title>
+    </Row>;
 }
