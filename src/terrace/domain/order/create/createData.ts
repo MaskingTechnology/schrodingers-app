@@ -10,7 +10,7 @@ export default function createData(tableNumber: string): OrderData
     const _id = generateId();
     const createdAt = new Date();
     const number = generateNumber();
-    const state = 'CREATED';
+    const state = 'OPEN';
     const productRefs: ProductRef[] = [];
     const total = 0;
 

@@ -1,7 +1,7 @@
 
 import { ProductView as ProductViewModel } from '../product/types';
 
-export type State = 'CREATED' | 'SENT';
+export type State = 'OPEN' | 'SENT';
 
 export type ProductRef =
 {

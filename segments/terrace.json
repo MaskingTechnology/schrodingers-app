@@ -2,7 +2,7 @@
     "./terrace/domain/order/addProduct": { "default": { "access": "public" } },
     "./terrace/domain/order/create": { "default": { "access": "public" } },
     "./terrace/domain/order/getByNumber": { "default": { "access": "public" } },
-    "./terrace/domain/order/getByTable": { "default": { "access": "public" } },
+    "./terrace/domain/order/getOpenByTable": { "default": { "access": "public" } },
     "./terrace/domain/order/send": { "default": { "access": "public" } },
 
     "./terrace/domain/product/getAll": { "default": { "access": "public" } },
