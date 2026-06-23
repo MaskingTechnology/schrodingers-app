@@ -1,4 +1,2 @@
 
-export { TOPIC, EVENTS } from './definitions';
-
-export type { SentEvent } from './types';
+export { TOPIC } from './definitions';

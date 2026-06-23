@@ -1,12 +1,11 @@
 
-import { TOPIC, EVENTS, SentEvent } from '@schrodinger/common/domain/order';
-import { eventBroker } from '@schrodinger/common/integrations';
+import { subscribe as subscribeToEvent } from '@schrodinger/common/domain/order/sent';
 
 import create from './create';
 
 export default async function subscribe(): Promise<void>
 {
-    eventBroker.subscribe<SentEvent>({ topic: TOPIC, event: EVENTS.SENT, handler: create });
+    return subscribeToEvent(create);
 }
 
 subscribe();

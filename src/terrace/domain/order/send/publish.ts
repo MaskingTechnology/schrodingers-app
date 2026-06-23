@@ -1,8 +1,7 @@
 
-import { TOPIC, EVENTS, type SentEvent } from '@schrodinger/common/domain/order';
-import { eventBroker } from '@schrodinger/common/integrations';
+import { publish as publishEvent, type EventData } from '@schrodinger/common/domain/order/sent';
 
-export default async function publish(data: SentEvent): Promise<void>
+export default async function publish(data: EventData): Promise<void>
 {
-    eventBroker.publish<SentEvent>({ topic: TOPIC, event: EVENTS.SENT, data });
+    return publishEvent(data);
 }

@@ -1,5 +1,5 @@
 
-export type SentEvent =
+export type EventData =
 {
     readonly number: string;
     readonly tableNumber: string;

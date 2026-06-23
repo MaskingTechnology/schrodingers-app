@@ -1,10 +1,10 @@
 
-import type { SentEvent } from '@schrodinger/common/domain/order';
+import type { EventData } from '@schrodinger/common/domain/order/sent';
 import { generateId } from '@schrodinger/common/utilities';
 
 import { OrderData } from '../types';
 
-export default function createData(eventData: SentEvent): OrderData
+export default function createData(eventData: EventData): OrderData
 {
     const _id = generateId();
     const { number, tableNumber } = eventData;
