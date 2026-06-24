@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import type { OrderView } from '^/domain/order';
 import getOpenOrders from '^/domain/order/getOpen';
-import preparedProduct from '^/domain/order/preparedProduct';
+import prepareProduct from '^/domain/order/prepareProduct';
 import closeOrder from '^/domain/order/close';
 
 export default function useOrders()
@@ -19,7 +19,7 @@ export default function useOrders()
 
     const productPrepared = async (orderNumber: string, entryId: string) =>
     {
-        const updatedOrder = await preparedProduct(orderNumber, entryId);
+        const updatedOrder = await prepareProduct(orderNumber, entryId);
 
         const orderIndex = orders.findIndex(order => order.number === orderNumber);
         const updatedOrders = orders.with(orderIndex, updatedOrder);
