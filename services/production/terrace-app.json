@@ -4,6 +4,6 @@
     {
         "serveIndexOnNotFound": true,
         "assetRoot": "./terrace/app",
-        "assets": ["index.html", "assets/**/*"]
+        "assets": ["index.html", "assets/**/*", "images/**/*"]
     }
 }

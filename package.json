@@ -15,7 +15,14 @@
     "copy-apps": "cpx 'build/*/app/**/*' 'dist'",
     "copy-assets": "cpx 'build/*/assets/**/*' 'dist'",
     
-    "dev": "jitar start --service=services/development/worker.json"
+    "dev": "jitar start --service=services/development/worker.json",
+
+    "terrace-app": "jitar start --service=services/production/terrace-app.json",
+    "bar-app": "jitar start --service=services/production/bar-app.json",
+    "gateway": "jitar start --service=services/production/gateway.json",
+    "proxy": "jitar start --service=services/production/proxy.json",
+    "domain": "jitar start --service=services/production/domain.json",
+    "persistence": "jitar start --service=services/production/persistence.json"
   },
   "workspaces": [
     "src/common",
