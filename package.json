@@ -17,12 +17,14 @@
     
     "dev": "jitar start --service=services/development/worker.json",
 
-    "terrace-app": "jitar start --service=services/production/terrace-app.json",
-    "bar-app": "jitar start --service=services/production/bar-app.json",
     "gateway": "jitar start --service=services/production/gateway.json",
-    "proxy": "jitar start --service=services/production/proxy.json",
     "domain": "jitar start --service=services/production/domain.json",
-    "persistence": "jitar start --service=services/production/persistence.json"
+    "terrace-persistence": "jitar start --service=services/production/terrace-persistence.json",
+    "terrace-app": "jitar start --service=services/production/terrace-app.json",
+    "terrace-proxy": "jitar start --service=services/production/terrace-proxy.json",
+    "bar-persistence": "jitar start --service=services/production/bar-persistence.json",
+    "bar-app": "jitar start --service=services/production/bar-app.json",
+    "bar-proxy": "jitar start --service=services/production/bar-proxy.json"
   },
   "workspaces": [
     "src/common",
