@@ -8,7 +8,7 @@
 		"storage": "20gb"
 	},
 
-	"forwardPorts": [3000],
+	"forwardPorts": [3000, 5714, 5715],
 
 	"postCreateCommand": "npm ci",
 
