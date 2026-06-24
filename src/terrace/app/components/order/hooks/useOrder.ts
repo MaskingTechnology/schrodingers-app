@@ -5,6 +5,7 @@ import type { OrderView } from '^/domain/order';
 import getOpenOrderByTable from '^/domain/order/getOpenByTable';
 import createOrder from '^/domain/order/create';
 import addProductToOrder from '^/domain/order/addProduct';
+import removeProductFromOrder from '^/domain/order/removeProduct';
 import sendOrder from '^/domain/order/send';
 
 export default function useOrder(tableNumber: string)
@@ -41,7 +42,11 @@ export default function useOrder(tableNumber: string)
 
     const removeProduct = async (entryId: string) =>
     {
-        // Implement me
+        if (order === undefined) return;
+
+        const updatedOrder = await removeProductFromOrder(order.number, entryId);
+
+        setOrder(updatedOrder);
     };
 
     const send = async () =>
