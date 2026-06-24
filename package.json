@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf build dist",
-    "build": "npm run build --workspaces",
+
+    "build": "rimraf build && npm run build-domains && npm run build-apps",
+    "build-domains": "npm run build-domain --workspaces",
+    "build-apps": "npm run build-app --workspaces --if-present",
 
     "dist": "rimraf dist && jitar build && npm run copy",
+    "clean-dist": "rimraf dist",
     "copy": "npm run copy-apps && npm run copy-assets",
     "copy-apps": "cpx 'build/*/app/**/*' 'dist'",
     "copy-assets": "cpx 'build/*/assets/**/*' 'dist'",
