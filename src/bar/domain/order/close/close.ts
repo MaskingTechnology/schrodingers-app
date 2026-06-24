@@ -11,5 +11,5 @@ export default async function close(number: string): Promise<void>
 
     const state: State = 'CLOSED';
 
-    await persist(data, state);
+    await persist(data._id, state);
 }

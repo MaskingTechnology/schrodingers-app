@@ -24,7 +24,7 @@ export default async function removeProduct(orderNumber: string, entryId: string
     const productRefs = orderData.productRefs.filter(ref => ref.entryId !== entryId);
     const total = orderData.total - productView.price;
 
-    await persist(orderData, productRefs, total);
+    await persist(orderData._id, productRefs, total);
 
     return _toView({ ...orderData, productRefs, total });
 }

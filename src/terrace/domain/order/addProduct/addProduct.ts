@@ -22,7 +22,7 @@ export default async function addProduct(orderNumber: string, productCode: strin
     const productRefs = [...orderData.productRefs, productRef];
     const total = orderData.total + productView.price;
 
-    await persist(orderData, productRefs, total);
+    await persist(orderData._id, productRefs, total);
 
     return _toView({ ...orderData, productRefs, total });
 }

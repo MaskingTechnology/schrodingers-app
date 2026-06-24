@@ -13,7 +13,7 @@ export default async function preparedProduct(orderNumber: string, entryId: stri
 
     const products = markPrepared(data, entryId);
 
-    await persist(data, products);
+    await persist(data._id, products);
 
     return _toView({ ...data, products });
 }

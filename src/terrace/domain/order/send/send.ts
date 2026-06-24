@@ -14,7 +14,7 @@ export default async function send(number: string): Promise<OrderView>
 
     const state: State = 'SENT';
 
-    await persist(data, state);
+    await persist(data._id, state);
 
     const view = await _toView({ ...data, state });
 

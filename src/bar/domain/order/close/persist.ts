@@ -5,7 +5,7 @@ import type { OrderData, State } from '../types';
 
 import { COLLECTION } from '../definitions';
 
-export default async function persist(data: OrderData, state: State): Promise<void>
+export default async function persist(_id: string, state: State): Promise<void>
 {
-    return database.updateOne<OrderData>(COLLECTION, { _id: data._id }, { state });
+    return database.updateOne<OrderData>(COLLECTION, { _id }, { state });
 }
