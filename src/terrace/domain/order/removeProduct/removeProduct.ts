@@ -1,6 +1,4 @@
 
-import { generateId } from '@schrodinger/common/utilities';
-
 import type { OrderView } from '../types';
 
 import getProductByCode from '../../product/getByCode';

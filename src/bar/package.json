@@ -8,7 +8,6 @@
     "build": "npm run clean && npm run build-domain && npm run build-app",
     "build-app": "vite build --config app/vite.config.js",
     "build-domain": "tsc && tsc-alias",
-    "clean": "rimraf ../../build/bar",
-    "lint": "eslint"
+    "clean": "rimraf ../../build/bar"
   }
 }
