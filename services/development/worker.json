@@ -3,10 +3,15 @@
     "setUp": [
         "./terrace/domain/product/seed"
     ],
-    "worker":
+    "standalone":
     {
         "segments": [
-            "terrace", "bar"
-        ]
+            "terrace.domain",
+            "bar.domain"
+        ],
+
+        "serveIndexOnNotFound": true,
+        "assetRoot": "./terrace/app",
+        "assets": ["index.html", "assets/**/*", "images/**/*"]
     }
 }
