@@ -15,7 +15,7 @@ export default function({ products, onPrepared }: Props)
 {
     if (products.length === 0)
     {
-        return <Text type='secondary'>Order is ready to be served.</Text>
+        return <Text type='secondary'>Order is ready to be served.</Text>;
     }
 
     return <List>

@@ -1,5 +1,5 @@
 
-import { ProductView as ProductViewModel } from '../product/types';
+import type { ProductView as ProductViewModel } from '../product/types';
 
 export type State = 'OPEN' | 'SENT';
 

@@ -1,5 +1,5 @@
 
-import { OrderView } from '../types';
+import type { OrderView } from '../types';
 
 import _toView from '../_toView';
 

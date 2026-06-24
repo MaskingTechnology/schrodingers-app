@@ -2,7 +2,7 @@
 import type { EventData } from '@schrodinger/common/domain/order/sent';
 import { generateId } from '@schrodinger/common/utilities';
 
-import { OrderData } from '../types';
+import type { OrderData } from '../types';
 
 export default function createData(eventData: EventData): OrderData
 {

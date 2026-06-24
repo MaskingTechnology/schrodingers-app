@@ -12,6 +12,6 @@ const products: ProductData[] =
     { _id: '000004', code: 'GW-001', name: 'Glass of wine', price: 3.50, imageUrl: '' },
     { _id: '000005', code: 'CR-001', name: 'Regular coffee', price: 2.75, imageUrl: '' },
     { _id: '000006', code: 'TR-001', name: 'Regular thee', price: 2.75, imageUrl: '' }
-]
+];
 
 products.forEach(product => database.insert(COLLECTION, product));

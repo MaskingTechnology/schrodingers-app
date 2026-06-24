@@ -17,5 +17,5 @@ export default function({ tableNumber }: Props)
         header={<Header tableNumber={tableNumber}></Header>}
         main={<Menu products={products} onOrder={addProduct}></Menu>}
         aside={<Order order={order} onRemoveProduct={removeProduct} onSend={send}></Order>}>
-    </Layout>
+    </Layout>;
 }

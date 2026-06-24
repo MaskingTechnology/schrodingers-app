@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-import { OrderView } from '^/domain/order';
+import type { OrderView } from '^/domain/order';
 import getOpenOrders from '^/domain/order/getOpen';
 import preparedProduct from '^/domain/order/preparedProduct';
 import closeOrder from '^/domain/order/close';

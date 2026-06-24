@@ -11,7 +11,8 @@ export default async function toView(data: OrderData): Promise<OrderView>
         data.productRefs.map(ref => getProductByCode(ref.productCode))
     );
 
-    const products = data.productRefs.map((ref, index) => {
+    const products = data.productRefs.map((ref, index) => 
+    {
         return { entryId: ref.entryId, ...productViews[index]};
     });
 

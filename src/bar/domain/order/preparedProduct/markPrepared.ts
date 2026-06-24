@@ -1,5 +1,5 @@
 
-import { OrderData, Product } from '../types';
+import type { OrderData, Product } from '../types';
 
 export default function markPrepared(data: OrderData, entryId: string): Product[]
 {

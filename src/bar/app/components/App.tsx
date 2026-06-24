@@ -9,5 +9,5 @@ export default function()
     return <Layout
         header={<Header onRefresh={refresh}></Header>}
         main={<OrderList orders={orders} onProductPrepared={productPrepared} onClose={close}></OrderList>}>
-    </Layout>
+    </Layout>;
 }
