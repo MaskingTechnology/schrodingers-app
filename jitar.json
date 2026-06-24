@@ -1,5 +1,9 @@
 {
     "source": "./build",
     "target": "./dist",
-    "segments": "./segments"
+    "segments": "./segments",
+    "resources": "./resources",
+    "build": {
+        "ignore": ["**/app/**/*"]
+    }
 }

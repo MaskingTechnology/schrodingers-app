@@ -1,0 +1,18 @@
+
+.designsystem
+{
+    span.text
+    {
+        font-size: 1em;
+
+        &.secondary
+        {
+            color: #666666;
+        }
+
+        &.bold
+        {
+            font-weight: bold;
+        }
+    }
+}

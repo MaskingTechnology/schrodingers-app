@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "paths": {
+      "^/*": ["../*"],
+      "~/*": ["./*"],
+      "@schrodinger/common/*": ["../../common/*"]
+    }
+  },
+  "references": [
+    { "path" : "../../common" }
+  ],
+  "include": ["./"]
+}

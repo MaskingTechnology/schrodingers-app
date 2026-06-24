@@ -1,0 +1,20 @@
+.layout
+{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 32px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    & > header
+    {
+        grid-column: 1 / span 2;
+    }
+
+    & > aside
+    {
+        border-left: 1px solid #aaaaaa;
+        padding: 16px;
+    }
+}

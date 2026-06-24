@@ -1,0 +1,12 @@
+
+.designsystem
+{
+    .card
+    {
+        background-color: #eeeeee;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+    }
+}

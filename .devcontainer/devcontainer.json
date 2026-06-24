@@ -1,6 +1,6 @@
 {
 	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
 
 	"hostRequirements": {
 		"cpus": 2,
@@ -8,9 +8,9 @@
 		"storage": "20gb"
 	},
 
-	"forwardPorts": [3000],
+	"forwardPorts": [3000, 5714, 5715],
 
-	"postCreateCommand": "npm install",
+	"postCreateCommand": "npm ci",
 
 	"remoteUser": "root"
 }

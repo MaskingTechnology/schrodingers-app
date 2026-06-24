@@ -1,0 +1,7 @@
+{
+    "./bar/domain/order/_getByNumber/retrieve": { "default": { "access": "protected" } },
+    "./bar/domain/order/close/persist": { "default": { "access": "protected" } },
+    "./bar/domain/order/create/persist": { "default": { "access": "protected" } },
+    "./bar/domain/order/getOpen/retrieve": { "default": { "access": "protected" } },
+    "./bar/domain/order/prepareProduct/persist": { "default": { "access": "protected" } }
+}
