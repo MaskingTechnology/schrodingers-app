@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "rimraf build dist",
 
-    "build": "rimraf build && npm run build-domains && npm run build-apps",
-    "build-domains": "npm run build-domain --workspaces",
-    "build-apps": "npm run build-app --workspaces --if-present",
+    "build": "npm run clean && npm run build-domain && npm run build-app",
+    "build-app": "vite build --config src/app/vite.config.js",
+    "build-domain": "tsc -p src/tsconfig.json && tsc-alias -p src/tsconfig.json",
 
     "dist": "rimraf dist && jitar build && npm run copy",
     "clean-dist": "rimraf dist",
@@ -16,22 +16,9 @@
     "copy-apps": "cpx 'build/*/app/**/*' 'dist'",
     "copy-assets": "cpx 'build/*/assets/**/*' 'dist'",
     
-    "dev": "jitar start --service=services/development/worker.json",
-
-    "gateway": "jitar start --service=services/production/gateway.json",
-    "domain": "jitar start --service=services/production/domain.json",
-    "terrace-persistence": "jitar start --service=services/production/terrace-persistence.json",
-    "terrace-app": "jitar start --service=services/production/terrace-app.json",
-    "terrace-proxy": "jitar start --service=services/production/terrace-proxy.json",
-    "bar-persistence": "jitar start --service=services/production/bar-persistence.json",
-    "bar-app": "jitar start --service=services/production/bar-app.json",
-    "bar-proxy": "jitar start --service=services/production/bar-proxy.json"
+    "dev-app": "vite --config src/app/vite.config.js",
+    "dev-domain": "jitar start --service=services/worker.json"
   },
-  "workspaces": [
-    "src/common",
-    "src/terrace",
-    "src/bar"
-  ],
   "dependencies": {
     "jitar": "0.11.2",
     "react": "19.2.7",

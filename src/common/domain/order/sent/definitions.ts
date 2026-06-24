@@ -1,2 +1,0 @@
-
-export const EVENT = 'sent';

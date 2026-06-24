@@ -1,0 +1,14 @@
+{
+    "url": "http://127.0.0.1:3000",
+    "setUp": [
+        "./domain/product/seed"
+    ],
+    "standalone":
+    {
+        "segments": ["domain"],
+
+        "serveIndexOnNotFound": true,
+        "assetRoot": "./app",
+        "assets": ["index.html", "assets/**/*", "images/**/*"]
+    }
+}
