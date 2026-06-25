@@ -1,5 +1,8 @@
 {
     "url": "http://127.0.0.1:3010",
+    "setUp": [
+        "./terrace/domain/product/seed"
+    ],
     "worker":
     {
         "gateway": "http://127.0.0.1:3000",

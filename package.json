@@ -20,10 +20,8 @@
 
     "gateway": "jitar start --service=services/production/gateway.json",
     "domain": "jitar start --service=services/production/domain.json",
-    "terrace-persistence": "jitar start --service=services/production/terrace-persistence.json",
     "terrace-app": "jitar start --service=services/production/terrace-app.json",
     "terrace-proxy": "jitar start --service=services/production/terrace-proxy.json",
-    "bar-persistence": "jitar start --service=services/production/bar-persistence.json",
     "bar-app": "jitar start --service=services/production/bar-app.json",
     "bar-proxy": "jitar start --service=services/production/bar-proxy.json"
   },
