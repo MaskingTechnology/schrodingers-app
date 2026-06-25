@@ -7,7 +7,8 @@
     "dev": "vite --config app/vite.config.js",
     "build": "npm run clean && npm run build-domain && npm run build-app",
     "build-app": "vite build --config app/vite.config.js",
-    "build-domain": "tsc && tsc-alias",
+    "build-domain": "tsc && tsc-alias && npm run add-js",
+    "add-js": "ts-add-js-extension --dir=../../build --showprogress=false",
     "clean": "rimraf ../../build/terrace"
   }
 }

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import type { ProductView } from '^/domain/product';
-import getAllProducts from '^/domain/product/getAll';
+import getAllProducts from '^/infrastructure/product/getAll/request';
 
 export default function useProducts()
 {

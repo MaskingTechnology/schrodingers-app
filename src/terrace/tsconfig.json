@@ -12,5 +12,5 @@
   "references": [
     { "path" : "../common" }
   ],
-  "include": ["./domain"]
+  "include": ["./domain", "./infrastructure"]
 }

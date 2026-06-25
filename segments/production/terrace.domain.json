@@ -1,0 +1,12 @@
+[
+    "./build/terrace/infrastructure/order/addProduct/endpoint.js",
+    "./build/terrace/infrastructure/order/create/endpoint.js",
+    "./build/terrace/infrastructure/order/getByNumber/endpoint.js",
+    "./build/terrace/infrastructure/order/getOpenByTable/endpoint.js",
+    "./build/terrace/infrastructure/order/removeProduct/endpoint.js" ,
+    "./build/terrace/infrastructure/order/send/endpoint.js",
+
+    "./build/terrace/domain/product/seed.js",
+    "./build/terrace/infrastructure/product/getAll/endpoint.js",
+    "./build/terrace/infrastructure/product/getByCode/endpoint.js"
+]

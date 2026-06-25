@@ -1,9 +1,0 @@
-{
-    "url": "http://127.0.0.1:3110",
-    "repository":
-    {
-        "serveIndexOnNotFound": true,
-        "assetRoot": "./terrace/app",
-        "assets": ["index.html", "assets/**/*", "images/**/*"]
-    }
-}

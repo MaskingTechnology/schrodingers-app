@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react';
 
 import type { OrderView } from '^/domain/order';
-import getOpenOrderByTable from '^/domain/order/getOpenByTable';
-import createOrder from '^/domain/order/create';
-import addProductToOrder from '^/domain/order/addProduct';
-import removeProductFromOrder from '^/domain/order/removeProduct';
-import sendOrder from '^/domain/order/send';
+import getOpenOrderByTable from '^/infrastructure/order/getOpenByTable/request';
+import createOrder from '^/infrastructure/order/create/request';
+import addProductToOrder from '^/infrastructure/order/addProduct/request';
+import removeProductFromOrder from '^/infrastructure/order/removeProduct/request';
+import sendOrder from '^/infrastructure/order/send/request';
 
 export default function useOrder(tableNumber: string)
 {

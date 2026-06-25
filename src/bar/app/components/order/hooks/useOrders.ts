@@ -2,9 +2,9 @@
 import { useState, useEffect } from 'react';
 
 import type { OrderView } from '^/domain/order';
-import getOpenOrders from '^/domain/order/getOpen';
-import prepareProduct from '^/domain/order/prepareProduct';
-import closeOrder from '^/domain/order/close';
+import getOpenOrders from '^/infrastructure/order/getOpen/request';
+import prepareProduct from '^/infrastructure/order/prepareProduct/request';
+import closeOrder from '^/infrastructure/order/close/request';
 
 export default function useOrders()
 {
