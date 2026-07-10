@@ -1,14 +1,14 @@
 
 import { useState, useEffect } from 'react';
 
-import type { OrderView } from '^/domain/order';
+import type { Order } from '^/domain/order';
 import getOpenOrders from '^/domain/order/getOpen';
 import prepareProduct from '^/domain/order/prepareProduct';
 import closeOrder from '^/domain/order/close';
 
 export default function useOrders()
 {
-    const [orders, setOrders] = useState<OrderView[]>([]);
+    const [orders, setOrders] = useState<Order[]>([]);
 
     const refresh = async () =>
     {

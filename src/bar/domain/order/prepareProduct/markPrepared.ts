@@ -1,7 +1,7 @@
 
-import type { OrderData, Product } from '../types';
+import type { Data, Product } from '../definitions';
 
-export default function markPrepared(data: OrderData, entryId: string): Product[]
+export default function markPrepared(data: Data, entryId: string): Product[]
 {
     return data.products.map(product =>
     {

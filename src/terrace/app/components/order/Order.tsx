@@ -1,7 +1,7 @@
 
 import { Column } from '@schrodinger/common/designsystem';
 
-import type { OrderView } from '^/domain/order';
+import type { Order } from '^/domain/order';
 
 import ProductList from './components/ProductList';
 import TotalAmount from './components/TotalAmount';
@@ -9,7 +9,7 @@ import SendButton from './components/SendButton';
 
 type Props =
 {
-    readonly order: OrderView | undefined;
+    readonly order: Order | undefined;
     readonly onRemoveProduct: (entryId: string) => void;
     readonly onSend: () => void;
 };

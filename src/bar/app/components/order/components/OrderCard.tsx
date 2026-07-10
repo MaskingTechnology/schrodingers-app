@@ -1,13 +1,13 @@
 
 import { Card, Title, Button } from '@schrodinger/common/designsystem';
 
-import type { OrderView } from '^/domain/order';
+import type { Order } from '^/domain/order';
 
 import ProductList from './ProductList';
 
 type Props =
 {
-    readonly order: OrderView;
+    readonly order: Order;
     readonly onProductPrepared: (orderNumber: string, entryId: string) => void;
     readonly onClose: (orderNumber: string) => void;
 };

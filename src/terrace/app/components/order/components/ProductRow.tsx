@@ -3,11 +3,11 @@ import { Row, Text, Button } from '@schrodinger/common/designsystem';
 
 import { toCurrency } from '@schrodinger/common/utilities';
 
-import type { ProductView } from '^/domain/order';
+import type { Product } from '^/domain/order';
 
 type Props =
 {
-    readonly product: ProductView;
+    readonly product: Product;
     readonly onRemove: () => void;
 };
 

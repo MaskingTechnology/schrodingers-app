@@ -1,2 +1,2 @@
 
-export type { OrderView, Product } from './types';
+export type { Order, Product } from './definitions';

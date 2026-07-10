@@ -3,10 +3,9 @@ import { eventBroker } from '^/integrations';
 
 import { TOPIC } from '../definitions';
 
-import { EVENT } from './definitions';
-import type { EventData } from './types';
+import { EVENT, type Event } from './definitions';
 
-export default async function subscribe(handler: (data: EventData) => void): Promise<void>
+export default async function subscribe(handler: (data: Event) => void): Promise<void>
 {
-    return eventBroker.subscribe<EventData>({ topic: TOPIC, event: EVENT, handler });
+    return eventBroker.subscribe<Event>({ topic: TOPIC, event: EVENT, handler });
 }

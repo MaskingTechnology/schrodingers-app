@@ -1,13 +1,13 @@
 
 import { Text } from '@schrodinger/common/designsystem';
 
-import type { ProductView } from '^/domain/product';
+import type { Product } from '^/domain/product';
 
 import ProductGrid from './components/ProductGrid';
 
 type Props =
 {
-    readonly products: ProductView[];
+    readonly products: Product[];
     readonly onOrder: (productCode: string) => void;
 };
 
