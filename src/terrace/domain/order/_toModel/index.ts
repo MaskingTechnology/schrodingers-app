@@ -1,9 +1,9 @@
 
-import type { OrderData, OrderView } from '../types';
-
 import getProductByCode from '../../product/getByCode';
 
-export default async function toView(data: OrderData): Promise<OrderView>
+import type { Data, Order } from '../definitions';
+
+export default async function run(data: Data): Promise<Order>
 {
     const { _id: $0, productRefs: $1, ...viewData } = data;
 

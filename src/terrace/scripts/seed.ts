@@ -1,10 +1,9 @@
 
 import { database } from '@schrodinger/common/integrations';
 
-import { COLLECTION } from './definitions';
-import type { ProductData } from './types';
+import { COLLECTION, type Data } from '^/domain/product/definitions';
 
-const products: ProductData[] =
+const products: Data[] =
 [
     { _id: '000001', code: 'BB-001', name: 'Bottle of beer', price: 4.25, imageUrl: '/images/beer_bottle.png' },
     { _id: '000002', code: 'GB-001', name: 'Glass of beer', price: 3.50, imageUrl: '/images/beer_glass.png' },

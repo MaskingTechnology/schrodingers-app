@@ -1,11 +1,11 @@
 
 import { generateId } from '@schrodinger/common/utilities';
 
-import type { OrderData, ProductRef } from '../types';
+import type { Data, ProductRef } from '../definitions';
 
 import generateNumber from './generateNumber';
 
-export default function createData(tableNumber: string): OrderData
+export default function createData(tableNumber: string): Data
 {
     const _id = generateId();
     const createdAt = new Date();
