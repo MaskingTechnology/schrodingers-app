@@ -10,7 +10,7 @@ import SendButton from './components/SendButton';
 type Props =
 {
     readonly order: Order | undefined;
-    readonly onRemoveProduct: (entryId: string) => void;
+    readonly onRemoveProduct: (productCode: string) => void;
     readonly onSend: () => void;
 };
 
@@ -20,7 +20,7 @@ export default function({ order, onRemoveProduct, onSend }: Props)
 
     return <Column>
         <ProductList products={order.products} onRemove={onRemoveProduct}></ProductList>
-        <TotalAmount amount={order.total}></TotalAmount>
+        <TotalAmount amount={order.totalPrice}></TotalAmount>
         <SendButton disabled={order.products.length === 0} onSend={onSend}></SendButton>
     </Column>;
 }

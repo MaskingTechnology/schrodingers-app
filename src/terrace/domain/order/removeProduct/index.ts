@@ -5,27 +5,28 @@ import type { Order } from '../definitions';
 import retrieveOrderByNumber from '../_retrieveByNumber';
 import toModel from '../_toModel';
 
+import removeProductEntry from './removeProductEntry';
 import persist from './persist';
-import UnknownEntry from './UnknownEntry';
+import updatedProductEntry from './updateProductEntry';
+import findProduct from './findProduct';
 
-export default async function run(orderNumber: string, entryId: string): Promise<Order>
+export default async function run(orderNumber: string, productCode: string): Promise<Order>
 {
-    const orderData = await retrieveOrderByNumber(orderNumber)
-    const productRef = orderData.productRefs.find(ref => ref.entryId === entryId);
+    const [orderData, productModel] = await Promise.all(
+    [
+        retrieveOrderByNumber(orderNumber),
+        getProductByCode(productCode)
+    ]);
 
-    if (productRef === undefined)
-    {
-        throw new UnknownEntry(orderNumber, entryId);
-    }
+    const product = findProduct(orderData, productCode);
 
-    const productView = await getProductByCode(productRef.productCode);
+    const products = product.quantity <= 1
+        ? removeProductEntry(orderData, productCode)
+        : updatedProductEntry(orderData, product);
+    
+    const totalPrice = orderData.totalPrice - productModel.price;
 
-    const productRefs = orderData.productRefs.filter(ref => ref.entryId !== entryId);
-    const total = orderData.total - productView.price;
+    await persist(orderData._id, products, totalPrice);
 
-    await persist(orderData._id, productRefs, total);
-
-    return toModel({ ...orderData, productRefs, total });
+    return toModel({ ...orderData, products, totalPrice });
 }
-
-export { UnknownEntry };

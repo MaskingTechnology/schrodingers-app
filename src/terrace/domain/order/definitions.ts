@@ -1,14 +1,12 @@
 
-import type { Product as ProductViewModel } from '../product';
-
 export const COLLECTION = 'terrace.orders';
 
 export type State = 'OPEN' | 'SENT';
 
-export type ProductRef =
+export type ProductData =
 {
-    readonly entryId: string;
-    readonly productCode: string;
+    readonly code: string;
+    readonly quantity: number;
 };
 
 export type Data =
@@ -18,16 +16,19 @@ export type Data =
     readonly number: string;
     readonly tableNumber: string;
     readonly state: State;
-    readonly productRefs: ProductRef[];
-    readonly total: number;
+    readonly products: ProductData[];
+    readonly totalPrice: number;
 };
 
-export type Product = ProductViewModel &
+export type Product =
 {
-    readonly entryId: string;
+    readonly code: string;
+    readonly name: string;
+    readonly price: number;
+    readonly quantity: number;
 }
 
-export type Order = Omit<Data, '_id' | 'productRefs'> &
+export type Order = Omit<Data, '_id' | 'products'> &
 {
     readonly products: Product[];
 };

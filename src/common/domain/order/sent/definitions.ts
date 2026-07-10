@@ -9,6 +9,6 @@ export type Event =
     {
         readonly code: string;
         readonly name: string;
-        readonly price: number;
+        readonly quantity: number;
     }[];
 };

@@ -1,27 +1,31 @@
 
-import { generateId } from '@schrodinger/common/utilities';
-
 import getProductByCode from '~/product/getByCode';
 
 import type { Order } from '../definitions';
 import retrieveOrderByNumber from '../_retrieveByNumber';
 import toModel from '../_toModel';
 
+import addProductEntry from './addProductEntry';
 import persist from './persist';
+import updateProductEntry from './updateProductEntry';
 
 export default async function run(orderNumber: string, productCode: string): Promise<Order>
 {
-    const [orderData, productView] = await Promise.all(
+    const [orderData, productModel] = await Promise.all(
     [
         retrieveOrderByNumber(orderNumber),
         getProductByCode(productCode)
     ]);
 
-    const productRef = { entryId: generateId(), productCode };
-    const productRefs = [...orderData.productRefs, productRef];
-    const total = orderData.total + productView.price;
+    const product = orderData.products.find(product => product.code === productCode);
 
-    await persist(orderData._id, productRefs, total);
+    const products = product === undefined
+        ? addProductEntry(orderData, productCode)
+        : updateProductEntry(orderData, product);
+    
+    const totalPrice = orderData.totalPrice + productModel.price;
 
-    return toModel({ ...orderData, productRefs, total });
+    await persist(orderData._id, products, totalPrice);
+
+    return toModel({ ...orderData, products, totalPrice });
 }

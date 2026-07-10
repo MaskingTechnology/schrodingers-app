@@ -13,10 +13,10 @@ export default function createData(eventData: Event): Data
     const products = eventData.products.map(product =>
     {
         const entryId = generateId();
-        const { code, name } = product;
+        const { code, name, quantity } = product;
         const prepared = false;
 
-        return { entryId, code, name, prepared };
+        return { entryId, code, name, quantity, prepared };
     });
 
     return { _id, number, tableNumber, openedAt, state, products };

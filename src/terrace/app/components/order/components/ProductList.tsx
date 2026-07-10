@@ -8,7 +8,7 @@ import ProductRow from './ProductRow';
 type Props =
 {
     readonly products: Product[];
-    readonly onRemove: (entryId: string) => void;
+    readonly onRemove: (productCode: string) => void;
 };
 
 export default function({ products, onRemove }: Props)
@@ -23,8 +23,8 @@ export default function({ products, onRemove }: Props)
             products.map(product =>
                 <ProductRow
                     product={product}
-                    onRemove={() => onRemove(product.entryId)}
-                    key={product.entryId}
+                    onRemove={() => onRemove(product.code)}
+                    key={product.code}
                 ></ProductRow>
             )
         }

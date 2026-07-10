@@ -15,9 +15,9 @@ export default async function run(number: string): Promise<Order>
 
     await persist(data._id, state);
 
-    const view = await toModel({ ...data, state });
+    const order = await toModel({ ...data, state });
 
-    await publish(view);
+    await publish(order);
 
-    return view;
+    return order;
 }

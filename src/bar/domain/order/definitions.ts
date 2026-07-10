@@ -8,6 +8,7 @@ export type Product =
     readonly entryId: string;
     readonly code: string;
     readonly name: string;
+    readonly quantity: number;
     readonly prepared: boolean;
 };
 

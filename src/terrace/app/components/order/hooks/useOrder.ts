@@ -40,11 +40,11 @@ export default function useOrder(tableNumber: string)
         setOrder(updatedOrder);
     };
 
-    const removeProduct = async (entryId: string) =>
+    const removeProduct = async (productCode: string) =>
     {
         if (order === undefined) return;
 
-        const updatedOrder = await removeProductFromOrder(order.number, entryId);
+        const updatedOrder = await removeProductFromOrder(order.number, productCode);
 
         setOrder(updatedOrder);
     };

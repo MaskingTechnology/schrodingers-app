@@ -12,7 +12,7 @@ type Props =
 export default function({ product, onPrepared }: Props)
 {
     return <Row>
-        <Text>{product.name}</Text>
+        <Text>{product.quantity}x {product.name}</Text>
         <Button type='secondary' onClick={onPrepared}>✔</Button>
     </Row>;
 }
