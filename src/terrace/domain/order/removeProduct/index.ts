@@ -1,5 +1,5 @@
 
-import getProductByCode from '../../product/getByCode';
+import getProductByCode from '~/product/getByCode';
 
 import type { Order } from '../definitions';
 import retrieveOrderByNumber from '../_retrieveByNumber';

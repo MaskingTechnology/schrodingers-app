@@ -1,5 +1,5 @@
 
-import getProductByCode from '../../product/getByCode';
+import getProductByCode from '~/product/getByCode';
 
 import type { Data, Order } from '../definitions';
 
