@@ -1,6 +1,5 @@
 
 import type { Order } from '../definitions';
-
 import retrieveByNumber from '../_retrieveByNumber';
 import toModel from '../_toModel';
 
