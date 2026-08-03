@@ -7,10 +7,18 @@
     "paths": {
       "^/*": ["./*"],
       "@schrodinger/common/*": ["../common/*"]
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true
   },
   "references": [
     { "path" : "../common" }
   ],
-  "include": ["./domain", "./infrastructure"]
+  "include": ["./domain/**/*"]
 }
