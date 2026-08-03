@@ -1,2 +1,2 @@
-export { COLLECTION } from './definitions';
-export type { ProductData, ProductView } from './types';
+
+export type { ProductView } from './types';

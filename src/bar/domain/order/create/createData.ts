@@ -1,0 +1,23 @@
+
+import type { EventData } from '@schrodinger/common/domain/order/sent';
+import { generateId } from '@schrodinger/common/utilities';
+
+import type { OrderData } from '../types';
+
+export default function createData(eventData: EventData): OrderData
+{
+    const _id = generateId();
+    const { number, tableNumber } = eventData;
+    const openedAt = new Date();
+    const state = 'OPEN';
+    const products = eventData.products.map(product =>
+    {
+        const entryId = generateId();
+        const { code, name } = product;
+        const prepared = false;
+
+        return { entryId, code, name, prepared };
+    });
+
+    return { _id, number, tableNumber, openedAt, state, products };
+}

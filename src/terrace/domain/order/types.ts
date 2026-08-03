@@ -1,5 +1,5 @@
 
-import type { ProductData as ProductDataType, ProductView as ProductViewModel } from '../product/types';
+import type { ProductView as ProductViewModel } from '../product/types';
 
 export type State = 'OPEN' | 'SENT';
 
@@ -20,11 +20,9 @@ export type OrderData =
     readonly total: number;
 };
 
-export type ProductData = ProductDataType;
-
 export type ProductView = ProductViewModel &
 {
-    readonly entryId: string;
+    entryId: string;
 }
 
 export type OrderView = Omit<OrderData, '_id' | 'productRefs'> &

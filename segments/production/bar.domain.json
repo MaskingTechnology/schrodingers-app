@@ -1,1 +1,6 @@
-["./build/bar/domain/server.js"]
+[
+    "./build/bar/domain/order/create/subscribe.js",
+    "./build/bar/infrastructure/order/close/endpoint.js",
+    "./build/bar/infrastructure/order/getOpen/endpoint.js",
+    "./build/bar/infrastructure/order/prepareProduct/endpoint.js"
+]
