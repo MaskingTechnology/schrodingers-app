@@ -7,7 +7,7 @@ type Props =
     readonly onSend: () => void;
 };
 
-export default function({ disabled, onSend }: Props)
+export default function ({ disabled, onSend }: Props)
 {
     return <Button type='primary' disabled={disabled} onClick={onSend}>Send order</Button>;
 }

@@ -3,24 +3,7 @@ export const COLLECTION = 'terrace.orders';
 
 export type State = 'OPEN' | 'SENT';
 
-export type ProductData =
-{
-    readonly code: string;
-    readonly quantity: number;
-};
-
-export type Data =
-{
-    readonly _id: string;
-    readonly createdAt: Date;
-    readonly number: string;
-    readonly tableNumber: string;
-    readonly state: State;
-    readonly products: ProductData[];
-    readonly totalPrice: number;
-};
-
-export type Product =
+export type ProductOrder =
 {
     readonly code: string;
     readonly name: string;
@@ -28,7 +11,17 @@ export type Product =
     readonly quantity: number;
 }
 
-export type Order = Omit<Data, '_id' | 'products'> &
+export type Order =
 {
-    readonly products: Product[];
+    readonly createdAt: Date;
+    readonly number: string;
+    readonly tableNumber: string;
+    readonly state: State;
+    readonly products: ProductOrder[];
+    readonly totalPrice: number;
+};
+
+export type Document = Order &
+{
+    readonly _id: string;
 };

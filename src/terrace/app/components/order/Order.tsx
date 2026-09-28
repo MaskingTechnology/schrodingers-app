@@ -14,7 +14,7 @@ type Props =
     readonly onSend: () => void;
 };
 
-export default function({ order, onRemoveProduct, onSend }: Props)
+export default function ({ order, onRemoveProduct, onSend }: Props)
 {
     if (order === undefined) return null;
 

@@ -2,14 +2,14 @@
 import type { Order } from '../definitions';
 import toModel from '../_toModel';
 
-import createData from './createData';
+import createDocument from './createDocument';
 import persist from './persist';
 
-export default async function run(tableNumber: string): Promise<Order>
+export default async function (tableNumber: string): Promise<Order>
 {
-    const data = createData(tableNumber);
+    const document = createDocument(tableNumber);
 
-    await persist(data);
+    await persist(document);
 
-    return toModel(data);
+    return toModel(document);
 }

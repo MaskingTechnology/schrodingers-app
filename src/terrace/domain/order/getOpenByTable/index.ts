@@ -1,17 +1,17 @@
 
-import type { Order } from '../definitions';
+import { type Order } from '../definitions';
 import toModel from '../_toModel';
 
 import retrieve from './retrieve';
 
-export default async function run(tableNumber: string): Promise<Order | undefined>
+export default async function (tableNumber: string): Promise<Order | undefined>
 {
-    const data = await retrieve(tableNumber);
+    const document = await retrieve(tableNumber);
 
-    if (data === undefined)
+    if (document === undefined)
     {
         return undefined;
     }
 
-    return toModel(data);
+    return toModel(document);
 }

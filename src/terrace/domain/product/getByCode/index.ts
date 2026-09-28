@@ -5,16 +5,14 @@ import toModel from '../_toModel';
 import retrieve from './retrieve';
 import UnknownCode from './UnknownCode';
 
-export default async function run(code: string): Promise<Product>
+export default async function (code: string): Promise<Product>
 {
-    const data = await retrieve(code);
+    const document = await retrieve(code);
 
-    if (data === undefined)
+    if (document === undefined)
     {
         throw new UnknownCode(code);
     }
 
-    return toModel(data);
+    return toModel(document);
 }
-
-export { UnknownCode };

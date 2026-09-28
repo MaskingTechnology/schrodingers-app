@@ -1,9 +1,9 @@
 
-import type { Data, Order } from '../definitions';
+import { type Document, type Order } from '../definitions';
 
-export default function run(data: Data): Order
+export default function (document: Document): Order
 {
-    const { _id: $, ...viewData } = data;
+    const { _id: $, ...order } = document;
 
-    return viewData;
+    return order;
 }

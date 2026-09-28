@@ -1,10 +1,10 @@
 
-import type { Event } from '@schrodinger/common/domain/order/sent';
+import { type Event } from '@schrodinger/common/domain/order/sent';
 import { generateId } from '@schrodinger/common/utilities';
 
-import type { Data } from '../definitions';
+import { type Document } from '../definitions';
 
-export default function createData(eventData: Event): Data
+export default function (eventData: Event): Document
 {
     const _id = generateId();
     const { number, tableNumber } = eventData;

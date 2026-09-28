@@ -6,12 +6,13 @@
   "scripts": {
     "clean": "rimraf build dist",
 
-    "build": "rimraf build && npm run build-domains && npm run build-apps",
-    "build-domains": "npm run build-domain --workspaces",
-    "build-apps": "npm run build-app --workspaces --if-present",
+    "build": "npm run compile && npm run bundle",
 
-    "dist": "rimraf dist && jitar build && npm run copy",
-    "clean-dist": "rimraf dist",
+    "compile": "rimraf build && npm run compile-domains && npm run compile-apps",
+    "compile-domains": "npm run compile-domain --workspaces --if-present",
+    "compile-apps": "npm run compile-app --workspaces --if-present",
+
+    "bundle": "rimraf dist && jitar build && npm run copy",
     "copy": "npm run copy-apps && npm run copy-assets",
     "copy-apps": "cpx 'build/*/app/**/*' 'dist'",
     "copy-assets": "cpx 'build/*/assets/**/*' 'dist'",
@@ -47,21 +48,21 @@
     "src/bar"
   ],
   "dependencies": {
-    "jitar": "0.11.2",
+    "jitar": "0.11.3",
     "react": "19.2.7",
     "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@jitar/plugin-vite": "0.11.2",
+    "@jitar/plugin-vite": "0.11.3",
     "@types/node": "24.13.2",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.2.0",
-    "cpx2": "9.0.0",
+    "cpx2": "9.0.3",
     "rimraf": "6.1.3",
-    "tsc-alias": "1.8.17",
+    "tsc-alias": "1.9.5",
     "typescript": "7.0.2",
-    "vite": "8.0.16",
+    "vite": "8.3.1",
     "wireit": "^0.14.13"
   },
   "engines": {

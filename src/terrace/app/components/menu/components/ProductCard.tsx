@@ -11,7 +11,7 @@ type Props =
     readonly onOrder: (productCode: string) => void;
 };
 
-export default function({ product, onOrder }: Props)
+export default function ({ product, onOrder }: Props)
 {
     return <Card>
         <Title type='sub'>{product.name}</Title>

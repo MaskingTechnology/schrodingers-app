@@ -6,7 +6,7 @@ type Props =
     readonly onRefresh: () => void;
 };
 
-export default function({ onRefresh }: Props)
+export default function ({ onRefresh }: Props)
 {
     return <Row>
         <Title>Schrödinger's Bar</Title>

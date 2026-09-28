@@ -1,9 +1,9 @@
 
 import { database } from '@schrodinger/common/integrations';
 
-import { COLLECTION, type Data } from '^/domain/product/definitions';
+import { COLLECTION as PRODUCT_COLLECTION, type Document as ProductDocument } from '^/domain/product/definitions';
 
-const products: Data[] =
+const products: ProductDocument[] =
 [
     { _id: '000001', code: 'BB-001', name: 'Bottle of beer', price: 4.25, imageUrl: '/images/beer_bottle.png' },
     { _id: '000002', code: 'GB-001', name: 'Glass of beer', price: 3.50, imageUrl: '/images/beer_glass.png' },
@@ -13,4 +13,4 @@ const products: Data[] =
     { _id: '000006', code: 'TR-001', name: 'Regular thee', price: 2.75, imageUrl: '/images/cup_thee.png' }
 ];
 
-products.forEach(product => database.insert(COLLECTION, product));
+products.forEach(product => database.insert(PRODUCT_COLLECTION, product));

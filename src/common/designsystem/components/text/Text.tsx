@@ -10,7 +10,7 @@ type Props =
     readonly weight?: 'normal' | 'bold';
 };
 
-export default function({ children, type = 'primary', weight = 'normal' }: Props)
+export default function ({ children, type = 'primary', weight = 'normal' }: Props)
 {
     const className = 'text ' + type + ' ' + weight;
 

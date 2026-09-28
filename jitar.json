@@ -4,6 +4,9 @@
     "segments": "./segments",
     "resources": "./resources",
     "build": {
-        "ignore": ["**/app/**/*"]
+        "ignore": [
+            "**/app/**/*",
+            "**/designsystem/**/*"
+        ]
     }
 }

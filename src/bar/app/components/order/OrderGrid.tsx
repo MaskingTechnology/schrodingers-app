@@ -1,7 +1,7 @@
 
 import { Grid, Text } from '@schrodinger/common/designsystem';
 
-import type { Order } from '^/domain/order';
+import { type Order } from '^/domain/order';
 
 import OrderCard from './components/OrderCard';
 
@@ -12,7 +12,7 @@ type Props =
     readonly onClose: (orderNumber: string) => void;
 };
 
-export default function({ orders, onProductPrepared, onClose }: Props)
+export default function ({ orders, onProductPrepared, onClose }: Props)
 {
     if (orders.length === 0)
     {

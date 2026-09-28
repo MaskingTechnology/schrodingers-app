@@ -11,7 +11,7 @@ type Props =
     readonly onRemove: () => void;
 };
 
-export default function({ product, onRemove }: Props)
+export default function ({ product, onRemove }: Props)
 {
     return <Row>
         <Text>{product.quantity}x {product.name} ({toCurrency(product.price)})</Text>

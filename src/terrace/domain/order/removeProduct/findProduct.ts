@@ -1,15 +1,15 @@
 
-import { Data, ProductData } from '../definitions';
+import { type Document, type ProductOrder } from '../definitions';
 
 import ProductNotFound from './ProductNotFound';
 
-export default function findProduct(data: Data, productCode: string): ProductData
+export default function (document: Document, productCode: string): ProductOrder
 {
-    const product = data.products.find(product => product.code === productCode);
+    const product = document.products.find(product => product.code === productCode);
     
     if (product === undefined)
     {
-        throw new ProductNotFound(data.number, productCode);
+        throw new ProductNotFound(document.number, productCode);
     }
 
     return product;

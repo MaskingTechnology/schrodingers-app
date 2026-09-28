@@ -1,32 +1,27 @@
 
-import getProductByCode from '~/product/getByCode';
-
-import type { Order } from '../definitions';
-import retrieveOrderByNumber from '../_retrieveByNumber';
+import { type Order } from '../definitions';
+import retrieveByNumber from '../_retrieveByNumber';
 import toModel from '../_toModel';
 
-import removeProductEntry from './removeProductEntry';
-import persist from './persist';
-import updatedProductEntry from './updateProductEntry';
 import findProduct from './findProduct';
+import updateQuantity from './updateQuantity';
+import updateProducts from './updateProducts';
+import persist from './persist';
+import updateTotalPrice from './updateTotalPrice';
 
-export default async function run(orderNumber: string, productCode: string): Promise<Order>
+export default async function (orderNumber: string, productCode: string): Promise<Order>
 {
-    const [orderData, productModel] = await Promise.all(
-    [
-        retrieveOrderByNumber(orderNumber),
-        getProductByCode(productCode)
-    ]);
+    const document = await retrieveByNumber(orderNumber);
 
-    const product = findProduct(orderData, productCode);
+    const productOrder = findProduct(document, productCode);
 
-    const products = product.quantity <= 1
-        ? removeProductEntry(orderData, productCode)
-        : updatedProductEntry(orderData, product);
+    const updateProductOrder = updateQuantity(productOrder);
+
+    const products = updateProducts(document, updateProductOrder);
     
-    const totalPrice = orderData.totalPrice - productModel.price;
+    const totalPrice = updateTotalPrice(document, updateProductOrder);
 
-    await persist(orderData._id, products, totalPrice);
+    await persist(document._id, products, totalPrice);
 
-    return toModel({ ...orderData, products, totalPrice });
+    return toModel({ ...document, products, totalPrice });
 }

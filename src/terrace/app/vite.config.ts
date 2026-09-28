@@ -7,7 +7,7 @@ const jitarConfig: JitarConfig = {
   projectRoot: '../../../',
   sourceRoot: '../../',
   jitarUrl: 'http://localhost:3000',
-  segments: [],
+  segments: ['terrace.errors'],
   middleware: []
 };
 

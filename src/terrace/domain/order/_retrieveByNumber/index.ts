@@ -1,17 +1,17 @@
 
-import type { Data } from '../definitions';
+import { type Document } from '../definitions';
 
 import retrieve from './retrieve';
 import UnknownNumber from './UnknownNumber';
 
-export default async function run(number: string): Promise<Data>
+export default async function (number: string): Promise<Document>
 {
-    const data = await retrieve(number);
+    const document = await retrieve(number);
 
-    if (data === undefined)
+    if (document === undefined)
     {
         throw new UnknownNumber(number);
     }
 
-    return data;
+    return document;
 }

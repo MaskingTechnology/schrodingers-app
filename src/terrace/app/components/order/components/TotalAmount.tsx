@@ -8,7 +8,7 @@ type Props =
     readonly amount: number;
 };
 
-export default function({ amount }: Props)
+export default function ({ amount }: Props)
 {
     return <Row>
         <Text weight='bold'>Total</Text>

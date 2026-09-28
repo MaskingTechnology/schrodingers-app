@@ -1,9 +1,9 @@
 
 import { database } from '@schrodinger/common/integrations';
 
-import { COLLECTION, type Data } from '../definitions';
+import { COLLECTION, type Document } from '../definitions';
 
-export default async function retrieve(tableNumber: string): Promise<Data | undefined>
+export default async function (tableNumber: string): Promise<Document | undefined>
 {
-    return database.findOne<Data>(COLLECTION, { tableNumber, state: 'OPEN' });
+    return database.findOne<Document>(COLLECTION, { tableNumber, state: 'OPEN' });
 }

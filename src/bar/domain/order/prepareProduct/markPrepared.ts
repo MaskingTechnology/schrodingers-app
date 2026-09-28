@@ -1,9 +1,9 @@
 
-import type { Data, Product } from '../definitions';
+import { type Document, type Product } from '../definitions';
 
-export default function markPrepared(data: Data, entryId: string): Product[]
+export default function (document: Document, entryId: string): Product[]
 {
-    return data.products.map(product =>
+    return document.products.map(product =>
     {
         const copy = { ...product };
 

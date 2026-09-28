@@ -8,7 +8,7 @@ import addProductToOrder from '^/domain/order/addProduct';
 import removeProductFromOrder from '^/domain/order/removeProduct';
 import sendOrder from '^/domain/order/send';
 
-export default function useOrder(tableNumber: string)
+export default function (tableNumber: string)
 {
     const [order, setOrder] = useState<Order | undefined>(undefined);
 

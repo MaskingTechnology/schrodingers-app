@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Product } from '^/domain/product';
 import getAllProducts from '^/domain/product/getAll';
 
-export default function useProducts()
+export default function ()
 {
     const [products, setProducts] = useState<Product[]>([]);
 

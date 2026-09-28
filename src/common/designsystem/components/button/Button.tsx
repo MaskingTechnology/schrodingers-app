@@ -13,7 +13,7 @@ type Props =
 
 const doNothing = () => {};
 
-export default function({ children, onClick, disabled = false, type = 'primary' }: Props)
+export default function ({ children, onClick, disabled = false, type = 'primary' }: Props)
 {
     const clickHandler = disabled ? doNothing : onClick;
     const className = 'button ' + type + (disabled ? ' disabled' : '');

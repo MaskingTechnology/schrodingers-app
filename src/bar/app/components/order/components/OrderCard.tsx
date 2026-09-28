@@ -1,7 +1,7 @@
 
 import { Card, Title, Button } from '@schrodinger/common/designsystem';
 
-import type { Order } from '^/domain/order';
+import { type Order } from '^/domain/order';
 
 import ProductList from './ProductList';
 
@@ -12,7 +12,7 @@ type Props =
     readonly onClose: (orderNumber: string) => void;
 };
 
-export default function({ order, onProductPrepared, onClose }: Props)
+export default function ({ order, onProductPrepared, onClose }: Props)
 {
     const products = order.products.filter(product => product.prepared === false);
 

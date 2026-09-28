@@ -1,9 +1,9 @@
 
-import type { Data, Product } from '../definitions';
+import { type Document, type Product } from '../definitions';
 
-export default function run(data: Data): Product
+export default function (document: Document): Product
 {
-    const { _id: $, ...view } = data;
+    const { _id: $, ...product } = document;
 
-    return view;
+    return product;
 }

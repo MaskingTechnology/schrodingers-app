@@ -1,12 +1,12 @@
 
-import type { Product } from '../definitions';
+import { type Product } from '../definitions';
 import toModel from '../_toModel';
 
 import retrieve from './retrieve';
 
-export default async function run(): Promise<Product[]>
+export default async function (): Promise<Product[]>
 {
-    const list = await retrieve();
+    const documents = await retrieve();
 
-    return list.map(data => toModel(data));
+    return documents.map(document => toModel(document));
 }

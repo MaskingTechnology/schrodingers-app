@@ -11,7 +11,7 @@ type Props =
     readonly onRemove: (productCode: string) => void;
 };
 
-export default function({ products, onRemove }: Props)
+export default function ({ products, onRemove }: Props)
 {
     if (products.length === 0)
     {

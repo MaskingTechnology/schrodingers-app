@@ -1,14 +1,14 @@
 
-import type { State } from '../definitions';
+import { type State } from '../definitions';
 import retrieveByNumber from '../_retrieveByNumber';
 
 import persist from './persist';
 
-export default async function run(number: string): Promise<void>
+export default async function (number: string): Promise<void>
 {
-    const data = await retrieveByNumber(number);
+    const document = await retrieveByNumber(number);
 
     const state: State = 'CLOSED';
 
-    await persist(data._id, state);
+    await persist(document._id, state);
 }

@@ -1,12 +1,12 @@
 
-import type { Order } from '../definitions';
+import { type Order } from '../definitions';
 import toModel from '../_toModel';
 
 import retrieve from './retrieve';
 
-export default async function run(): Promise<Order[]>
+export default async function (): Promise<Order[]>
 {
-    const list = await retrieve();
+    const documents = await retrieve();
 
-    return list.map(data => toModel(data));
+    return documents.map(document => toModel(document));
 }

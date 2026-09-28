@@ -11,7 +11,7 @@ type Props =
     readonly onOrder: (productCode: string) => void;
 };
 
-export default function({ products, onOrder }: Props)
+export default function ({ products, onOrder }: Props)
 {
     return <Grid>
         {

@@ -6,7 +6,7 @@ type Props =
     readonly src: string;
 };
 
-export default function({ src }: Props)
+export default function ({ src }: Props)
 {
     return <img src={src} />;
 }

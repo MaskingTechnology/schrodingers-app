@@ -1,7 +1,7 @@
 
 import { Row, Text, Button } from '@schrodinger/common/designsystem';
 
-import type { Product } from '^/domain/order';
+import { type Product } from '^/domain/order';
 
 type Props =
 {
@@ -9,7 +9,7 @@ type Props =
     readonly onPrepared: () => void;
 };
 
-export default function({ product, onPrepared }: Props)
+export default function ({ product, onPrepared }: Props)
 {
     return <Row>
         <Text>{product.quantity}x {product.name}</Text>

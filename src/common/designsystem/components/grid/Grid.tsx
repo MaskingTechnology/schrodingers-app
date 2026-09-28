@@ -8,7 +8,7 @@ type Props =
     readonly children: ReactNode;
 };
 
-export default function({ children }: Props)
+export default function ({ children }: Props)
 {
     return <div className='grid'>{children}</div>;
 }

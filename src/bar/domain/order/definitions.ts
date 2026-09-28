@@ -12,9 +12,8 @@ export type Product =
     readonly prepared: boolean;
 };
 
-export type Data =
+export type Order =
 {
-    readonly _id: string;
     readonly number: string;
     readonly tableNumber: string;
     readonly openedAt: Date;
@@ -22,4 +21,7 @@ export type Data =
     readonly products: Product[];
 };
 
-export type Order = Omit<Data, '_id'>;
+export type Document = Order &
+{
+    readonly _id: string;
+}
