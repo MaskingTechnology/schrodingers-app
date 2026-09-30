@@ -1,5 +1,5 @@
 
-import type { Product } from '../definitions';
+import { type Product } from '../definitions';
 import toModel from '../_toModel';
 
 import retrieve from './retrieve';

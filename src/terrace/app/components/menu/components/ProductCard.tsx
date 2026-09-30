@@ -3,7 +3,7 @@ import { Card, Row, Title, Text, Image, Button } from '@schrodinger/common/desig
 
 import { toCurrency } from '@schrodinger/common/utilities';
 
-import type { Product } from '^/domain/product';
+import { type Product } from '^/domain/product';
 
 type Props =
 {

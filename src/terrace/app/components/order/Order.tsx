@@ -1,7 +1,7 @@
 
 import { Column } from '@schrodinger/common/designsystem';
 
-import type { Order } from '^/domain/order';
+import { type Order } from '^/domain/order';
 
 import ProductList from './components/ProductList';
 import TotalAmount from './components/TotalAmount';

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-import type { Order } from '^/domain/order';
+import { type Order } from '^/domain/order';
 import getOpenOrderByTable from '^/domain/order/getOpenByTable';
 import createOrder from '^/domain/order/create';
 import addProductToOrder from '^/domain/order/addProduct';

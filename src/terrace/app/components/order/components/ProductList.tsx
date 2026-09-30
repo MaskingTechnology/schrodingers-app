@@ -1,7 +1,7 @@
 
 import { List, Text } from '@schrodinger/common/designsystem';
 
-import type { Product } from '^/domain/order';
+import { type Product } from '^/domain/order';
 
 import ProductRow from './ProductRow';
 

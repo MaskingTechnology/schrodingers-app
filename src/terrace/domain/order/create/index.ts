@@ -1,5 +1,5 @@
 
-import type { Order } from '../definitions';
+import { type Order } from '../definitions';
 import toModel from '../_toModel';
 
 import createDocument from './createDocument';

@@ -1,7 +1,7 @@
 
 import { Text } from '@schrodinger/common/designsystem';
 
-import type { Product } from '^/domain/product';
+import { type Product } from '^/domain/product';
 
 import ProductGrid from './components/ProductGrid';
 

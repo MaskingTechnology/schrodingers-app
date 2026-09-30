@@ -1,7 +1,7 @@
 
 import { Grid } from '@schrodinger/common/designsystem';
 
-import type { Product } from '^/domain/product';
+import { type Product } from '^/domain/product';
 
 import ProductCard from './ProductCard';
 
