@@ -9,7 +9,7 @@ type Props =
     readonly type?: 'main' | 'sub';
 };
 
-export default function({ children, type = 'main' }: Props)
+export default function ({ children, type = 'main' }: Props)
 {
     return type === 'main'
         ? <h1 className='title'>{children}</h1>

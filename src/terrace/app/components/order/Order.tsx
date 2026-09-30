@@ -1,7 +1,7 @@
 
 import { Column } from '@schrodinger/common/designsystem';
 
-import type { OrderView } from '^/domain/order';
+import type { Order } from '^/domain/order';
 
 import ProductList from './components/ProductList';
 import TotalAmount from './components/TotalAmount';
@@ -9,18 +9,18 @@ import SendButton from './components/SendButton';
 
 type Props =
 {
-    readonly order: OrderView | undefined;
-    readonly onRemoveProduct: (entryId: string) => void;
+    readonly order: Order | undefined;
+    readonly onRemoveProduct: (productCode: string) => void;
     readonly onSend: () => void;
 };
 
-export default function({ order, onRemoveProduct, onSend }: Props)
+export default function ({ order, onRemoveProduct, onSend }: Props)
 {
     if (order === undefined) return null;
 
     return <Column>
         <ProductList products={order.products} onRemove={onRemoveProduct}></ProductList>
-        <TotalAmount amount={order.total}></TotalAmount>
+        <TotalAmount amount={order.totalPrice}></TotalAmount>
         <SendButton disabled={order.products.length === 0} onSend={onSend}></SendButton>
     </Column>;
 }

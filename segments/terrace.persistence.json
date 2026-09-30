@@ -1,5 +1,5 @@
 {
-    "./terrace/domain/order/_getByNumber/retrieve": { "default": { "access": "protected" } },
+    "./terrace/domain/order/_retrieveByNumber/retrieve": { "default": { "access": "protected" } },
     "./terrace/domain/order/addProduct/persist": { "default": { "access": "protected" } },
     "./terrace/domain/order/create/persist": { "default": { "access": "protected" } },
     "./terrace/domain/order/getOpenByTable/retrieve": { "default": { "access": "protected" } },

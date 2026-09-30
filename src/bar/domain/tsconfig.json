@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "paths": {
+      "~/*": ["./*"],
+      "^/*": ["../*"],
+      "@schrodinger/common/*": ["../../common/*"]
+    }
+  },
+  "references": [
+    { "path" : "../../common" }
+  ]
+}

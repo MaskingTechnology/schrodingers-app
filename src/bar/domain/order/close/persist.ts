@@ -1,11 +1,9 @@
 
 import { database } from '@schrodinger/common/integrations';
 
-import type { OrderData, State } from '../types';
+import { COLLECTION, type Document, type State } from '../definitions';
 
-import { COLLECTION } from '../definitions';
-
-export default async function persist(_id: string, state: State): Promise<void>
+export default async function (_id: string, state: State): Promise<void>
 {
-    return database.updateOne<OrderData>(COLLECTION, { _id }, { state });
+    return database.updateOne<Document>(COLLECTION, { _id }, { state });
 }

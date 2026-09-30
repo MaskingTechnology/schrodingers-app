@@ -1,16 +1,16 @@
 
 import { useState, useEffect } from 'react';
 
-import type { OrderView } from '^/domain/order';
+import type { Order } from '^/domain/order';
 import getOpenOrderByTable from '^/domain/order/getOpenByTable';
 import createOrder from '^/domain/order/create';
 import addProductToOrder from '^/domain/order/addProduct';
 import removeProductFromOrder from '^/domain/order/removeProduct';
 import sendOrder from '^/domain/order/send';
 
-export default function useOrder(tableNumber: string)
+export default function (tableNumber: string)
 {
-    const [order, setOrder] = useState<OrderView | undefined>(undefined);
+    const [order, setOrder] = useState<Order | undefined>(undefined);
 
     const initialize = async () =>
     {
@@ -40,11 +40,11 @@ export default function useOrder(tableNumber: string)
         setOrder(updatedOrder);
     };
 
-    const removeProduct = async (entryId: string) =>
+    const removeProduct = async (productCode: string) =>
     {
         if (order === undefined) return;
 
-        const updatedOrder = await removeProductFromOrder(order.number, entryId);
+        const updatedOrder = await removeProductFromOrder(order.number, productCode);
 
         setOrder(updatedOrder);
     };

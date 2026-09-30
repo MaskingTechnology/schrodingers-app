@@ -2,7 +2,7 @@
 import { Layout, Header } from './application';
 import { OrderList, useOrders } from './order';
 
-export default function()
+export default function ()
 {
     const { orders, refresh, productPrepared, close } = useOrders();
 

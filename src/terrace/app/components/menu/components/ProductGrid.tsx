@@ -1,17 +1,17 @@
 
 import { Grid } from '@schrodinger/common/designsystem';
 
-import type { ProductView } from '^/domain/product';
+import type { Product } from '^/domain/product';
 
 import ProductCard from './ProductCard';
 
 type Props =
 {
-    readonly products: ProductView[];
+    readonly products: Product[];
     readonly onOrder: (productCode: string) => void;
 };
 
-export default function({ products, onOrder }: Props)
+export default function ({ products, onOrder }: Props)
 {
     return <Grid>
         {

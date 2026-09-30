@@ -1,7 +1,7 @@
 
 import { List, Text } from '@schrodinger/common/designsystem';
 
-import type { Product } from '^/domain/order';
+import { type Product } from '^/domain/order';
 
 import ProductRow from './ProductRow';
 
@@ -11,7 +11,7 @@ type Props =
     readonly onPrepared: (entryId: string) => void;
 };
 
-export default function({ products, onPrepared }: Props)
+export default function ({ products, onPrepared }: Props)
 {
     if (products.length === 0)
     {

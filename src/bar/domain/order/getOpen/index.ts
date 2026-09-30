@@ -1,2 +1,12 @@
 
-export { default } from './getOpen';
+import { type Order } from '../definitions';
+import toModel from '../_toModel';
+
+import retrieve from './retrieve';
+
+export default async function (): Promise<Order[]>
+{
+    const documents = await retrieve();
+
+    return documents.map(document => toModel(document));
+}

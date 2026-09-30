@@ -1,7 +1,7 @@
 
 let number = 0;
 
-export default function generateNumber(): string
+export default function (): string
 {
     return String(++number).padStart(3, '0');
 }

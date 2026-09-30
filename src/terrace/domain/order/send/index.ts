@@ -1,2 +1,23 @@
 
-export { default } from './send';
+import { publish } from '@schrodinger/common/domain/order/sent';
+
+import { type Order, type State } from '../definitions';
+import retrieveByNumber from '../_retrieveByNumber';
+import toModel from '../_toModel';
+
+import persist from './persist';
+
+export default async function (number: string): Promise<Order>
+{
+    const document = await retrieveByNumber(number);
+
+    const state: State = 'SENT';
+
+    await persist(document._id, state);
+
+    const order = await toModel({ ...document, state });
+
+    await publish(order);
+
+    return order;
+}

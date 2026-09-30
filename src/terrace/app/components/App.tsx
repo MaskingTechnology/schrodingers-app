@@ -8,7 +8,7 @@ type Props =
     readonly tableNumber: string;
 };
 
-export default function({ tableNumber }: Props)
+export default function ({ tableNumber }: Props)
 {
     const { products } = useProducts();
     const { order, addProduct, removeProduct, send } = useOrder(tableNumber);

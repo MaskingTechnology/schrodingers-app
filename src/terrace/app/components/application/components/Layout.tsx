@@ -10,7 +10,7 @@ type Props =
     readonly aside: ReactNode;
 };
 
-export default function({header, main, aside}: Props)
+export default function ({header, main, aside}: Props)
 {
     return <div className='layout'>
         <header className='row'>{header}</header>

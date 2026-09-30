@@ -1,16 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "rootDir": "./",
-    "outDir": "../../build/bar",
-    "paths": {
-      "^/*": ["./*"],
-      "@schrodinger/common/*": ["../common/*"]
-    }
+    "outDir": "../../build/bar"
   },
-  "references": [
-    { "path" : "../common" }
-  ],
   "include": ["./domain"]
 }

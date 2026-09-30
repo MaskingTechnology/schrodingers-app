@@ -1,2 +1,2 @@
 
-export type { ProductView } from './types';
+export type { Product } from './definitions';
