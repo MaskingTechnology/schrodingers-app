@@ -1,8 +1,0 @@
-{
-    "./bar/domain/order/close": { "default": { "access": "public" } },
-    "./bar/domain/order/create": { "default": { "access": "private" } },
-    "./bar/domain/order/getOpen": { "default": { "access": "public" } },
-    "./bar/domain/order/prepareProduct": { "default": { "access": "public" } },
-
-    "./bar/domain/order/subscriptions": { "default": { "access": "private" } }
-}

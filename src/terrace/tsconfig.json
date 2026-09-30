@@ -1,8 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "../../build/terrace"
-  },
-  "include": ["./domain", "./scripts"]
-}

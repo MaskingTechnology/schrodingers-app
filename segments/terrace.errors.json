@@ -1,6 +1,0 @@
-{
-    "./terrace/domain/order/_retrieveByNumber/UnknownNumber": { "default": { } },
-    "./terrace/domain/order/removeProduct/ProductNotFound": { "default": { } },
-
-    "./terrace/domain/product/getByCode/UnknownCode": { "default": { } }
-}

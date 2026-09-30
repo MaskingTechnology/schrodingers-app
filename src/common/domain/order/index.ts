@@ -1,2 +1,0 @@
-
-export { TOPIC } from './definitions';
