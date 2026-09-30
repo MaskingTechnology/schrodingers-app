@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "compile": "npm run clean && npm run compile-domain",
-    "compile-domain": "tsc && tsc-alias",
+    "build": "npm run clean && npm run build-domain",
+    "build-domain": "tsc && tsc-alias && npm run add-js",
+    "add-js": "ts-add-js-extension --dir=../../build --showprogress=false",
     "clean": "rimraf ../../build/common"
   }
 }

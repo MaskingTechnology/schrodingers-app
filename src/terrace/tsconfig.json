@@ -4,5 +4,5 @@
     "rootDir": "./",
     "outDir": "../../build/terrace"
   },
-  "include": ["./domain", "./scripts"]
+  "include": ["./domain", "./scripts", "./infrastructure"]
 }

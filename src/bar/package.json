@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config app/vite.config.js",
-    "compile": "npm run clean && npm run compile-domain && npm run compile-app",
-    "compile-app": "vite build --config app/vite.config.js",
-    "compile-domain": "tsc -p domain/tsconfig.json && tsc-alias -p domain/tsconfig.json",
+    "build": "npm run clean && npm run build-domain && npm run build-app",
+    "build-app": "vite build --config app/vite.config.js",
+    "build-domain": "tsc -p domain/tsconfig.json && tsc-alias -p domain/tsconfig.json && npm run add-js",
+    "add-js": "ts-add-js-extension --dir=../../build --showprogress=false",
     "clean": "rimraf ../../build/bar"
   }
 }
