@@ -1,7 +1,10 @@
 # Part 1: Monolith
 
+In this part we'll introduce the app in its simplest form: a monolith consisting of an app and domain logic.
 
 # Steps
+
+The practical steps taken during this part.
 
 ## 1. Installation
 
@@ -105,4 +108,4 @@ Open a new terminal and start the app.
 npm run dev-app
 ```
 
-Go back to the browser and refesh the app. Open the Developer Tools and check the network tab to verify that the domain logic is coming from the backend.
+Go back to the browser and refresh the app. Open the Developer Tools and check the network tab to verify that the domain logic is coming from the backend.
