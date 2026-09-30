@@ -5,7 +5,7 @@
     ],
     "standalone":
     {
-        "segments": ["domain"],
+        "segments": ["domain", "errors"],
 
         "serveIndexOnNotFound": true,
         "assetRoot": "./app",
