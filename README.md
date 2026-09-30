@@ -1,31 +1,108 @@
-# Building Schrödinger's App
+# Part 1: Monolith
 
-Can an application be a monolith and microservices at the same time? Spoiler alert: **yes**!
 
-In this hands-on workshop, we'll build a full-stack application with TypeScript, React and Jitar that blurs the traditional boundaries between monolithic and distributed architectures.
+# Steps
 
-Much like Schrödinger's famous thought experiment, the application's deployment model remains undecided during development. Only at deployment time do we choose whether it runs as a monolith, a set of microservices, or something in between.
+## 1. Installation
 
-Along the way, you'll learn practical techniques for designing scalable systems, defining logical and physical boundaries, creating distributable components, and practical deployment strategies.
+Open a terminal and run:
 
-This workshop is ideal for full-stack developers, backend developers, and software architects.
+```bash
+npm ci
+```
 
-# Prerequisites
+## 2. Build and run
 
-Before we begin, make sure you have Git, Node.js (version 24 or later), and a code editor installed.
+Execute the following commands:
 
-# Program
+```bash
+npm run build
+npm run dev-app
+```
 
-This workshop is divided into two parts:
+Open a browser and go to `http://localhost:5174`.
 
-## Part 1: Monolith
+## 3. Explore the application
 
-We'll start with a full-stack monolith that unifies the frontend and backend into a single application. In this part we'll configure the app for an independent deployment of the frontend and the backend.
+The application and the source code will be explained during the workshop.
 
-The code and instructions of this part are available in the branch `monolith`.
+## 4. Extend the application
 
-## Part 2: Modulith
+Removing products from an order doesn't work yet. Let's fix it.
 
-We'll scale the system up to a domain driver modular monolith composed of multiple applications and explore how the same codebase can be deployed either as a monolith or as a collection of microservices. In this part we'll split the backend into multiple parts.
+```ts
+// src/app/components/order/hooks/useOrder.ts
 
-The code and instructions of this part are available in the branch `modulith`.
+// add this import
+import removeProductFromOrder from '^/domain/order/removeProduct';
+
+// implement the removeProduct function
+const removeProduct = async (productCode: string) =>
+{
+    if (order === undefined) return;
+
+    const updatedOrder = await removeProductFromOrder(order.number, productCode);
+
+    setOrder(updatedOrder);
+};
+```
+
+After saving the file, removing a product now works.
+
+## 5. Move domain logic to backend
+
+The application fully runs in the browser, including the database. Each refresh empties the order. Let's change that.
+
+First, we'll define deployment boundaries.
+
+Starting with all domain logic in `segments/domain.json`:
+
+```json
+{
+    "./domain/order/addProduct": { "default": { "access": "public" } },
+    "./domain/order/create": { "default": { "access": "public" } },
+    "./domain/order/getByNumber": { "default": { "access": "public" } },
+    "./domain/order/getOpenByTable": { "default": { "access": "public" } },
+    "./domain/order/removeProduct" : { "default": { "access": "public" } },
+    "./domain/order/send": { "default": { "access": "public" } },
+
+    "./domain/product/getAll": { "default": { "access": "public" } },
+    "./domain/product/getByCode": { "default": { "access": "public" } }
+}
+```
+
+The errors need to be added to `segments/errors.json`:
+
+```json
+{
+    "./domain/order/_retrieveByNumber/UnknownNumber": { "default": { } },
+    "./domain/order/removeProduct/ProductNotFound": { "default": { } },
+
+    "./domain/product/getByCode/UnknownCode": { "default": { } }
+}
+```
+
+The backend configuration needs a seed for the database. Add the following to `services/worker.json`:
+
+```json
+"setUp": [
+    "scripts/seed"        
+],
+```
+
+## 6. Verify
+
+Stop the Vite dev-server (Ctrl+C).
+
+```bash
+npm run build
+npm run dev-domain
+```
+
+Open a new terminal and start the app.
+
+```bash
+npm run dev-app
+```
+
+Go back to the browser and refesh the app. Open the Developer Tools and check the network tab to verify that the domain logic is coming from the backend.
