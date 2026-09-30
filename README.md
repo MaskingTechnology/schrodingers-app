@@ -13,7 +13,9 @@ Along the way, you'll learn practical techniques for designing scalable systems,
 This workshop is ideal for full-stack developers, backend developers, and software architects.
 
 # Prerequisites
-Before we begin, make sure you have Git, Node.js (version 24 or later), and a code editor installed on your laptop.
+
+Before we begin, make sure you have Git, Node.js (version 24 or later), and a code editor installed.
 
 # Key takeaway
-Rules and tools for building a scalable full-stack monolith
+
+Rules and tools for building a scalable full-stack applications and systems from a single codebase.
