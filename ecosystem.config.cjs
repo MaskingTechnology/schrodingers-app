@@ -15,14 +15,6 @@ module.exports = {
       restart_delay: 1000
     },
     {
-      name: "terrace-persistence",
-      script: "./node_modules/jitar/dist/cli.js",
-      args: "start --service=services/production/terrace-persistence.json",
-      interpreter: "node",
-      autorestart: true,
-      restart_delay: 1000
-    },
-    {
       name: "terrace-app",
       script: "./node_modules/jitar/dist/cli.js",
       args: "start --service=services/production/terrace-app.json",
@@ -34,14 +26,6 @@ module.exports = {
       name: "terrace-proxy",
       script: "./node_modules/jitar/dist/cli.js",
       args: "start --service=services/production/terrace-proxy.json",
-      interpreter: "node",
-      autorestart: true,
-      restart_delay: 1000
-    },
-    {
-      name: "bar-persistence",
-      script: "./node_modules/jitar/dist/cli.js",
-      args: "start --service=services/production/bar-persistence.json",
       interpreter: "node",
       autorestart: true,
       restart_delay: 1000
