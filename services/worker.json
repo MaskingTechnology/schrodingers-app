@@ -7,7 +7,7 @@
     {
         "segments": ["domain", "errors"],
 
-        "serveIndexOnNotFound": true,
+        "fallback": "index.html",
         "assetRoot": "./app",
         "assets": ["index.html", "assets/**/*", "images/**/*"]
     }
