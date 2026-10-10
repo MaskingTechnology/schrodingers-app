@@ -12,7 +12,7 @@
             "bar.persistence"
         ],
 
-        "serveIndexOnNotFound": true,
+        "fallback": "index.html",
         "assetRoot": "./terrace/app",
         "assets": ["index.html", "assets/**/*", "images/**/*"]
     }

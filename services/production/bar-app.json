@@ -2,7 +2,7 @@
     "url": "http://127.0.0.1:3210",
     "repository":
     {
-        "serveIndexOnNotFound": true,
+        "fallback": "index.html",
         "assetRoot": "./bar/app",
         "assets": ["index.html", "assets/**/*"]
     }
